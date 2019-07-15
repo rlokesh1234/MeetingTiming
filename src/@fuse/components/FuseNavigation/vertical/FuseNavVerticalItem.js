@@ -1,5 +1,5 @@
 import React from 'react';
-import {withStyles, Icon, ListItem, ListItemText} from '@material-ui/core';
+import {withStyles, ListItem, ListItemText} from '@material-ui/core';
 import {NavLink, withRouter} from 'react-router-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
