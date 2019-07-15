@@ -1,0 +1,9 @@
+/*@tailwind preflight;*/
+
+@tailwind utilities;
+
+
+.listValue{
+    min-width: 30px;
+    text-align: center
+}
