@@ -29,6 +29,7 @@ class AnalyticsDashboardApp extends Component {
         {
             return null;
         }
+        console.log(widgets.widget1,'widget')
         return (
             <div className="w-full">
 
@@ -40,7 +41,7 @@ class AnalyticsDashboardApp extends Component {
 
                         <div className="flex flex-1 flex-col min-w-0">
 
-                            <div className="flex flex-col sm:flex sm:flex-row pb-32">
+                            {/* <div className="flex flex-col sm:flex sm:flex-row pb-32">
 
                             {adminData && adminData.map((adminDetails,index)=>{
                                     return (<div className="widget w-full sm:w-1/4 flex p-16" key={index}>
@@ -48,9 +49,9 @@ class AnalyticsDashboardApp extends Component {
                                             </div>)
                                 })}
                                
-                            </div>
+                            </div> */}
 
-                            <FuseAnimate delay={600}>
+                            {/* <FuseAnimate delay={600}>
                                 <Typography className="px-16 pb-8 text-18 font-300">
                                     Gross Revenues
                                 </Typography>
@@ -68,12 +69,12 @@ class AnalyticsDashboardApp extends Component {
 
                             <div className="widget w-full p-16 pb-32">
                                 <Widget6 data={sellerData}/>
-                            </div>
+                            </div> */}
                         </div>
 
                         <div className="flex flex-wrap w-full md:w-320 pt-16">
 
-                            <div className="mb-32 w-full sm:w-1/2 md:w-full">
+                            {/* <div className="mb-32 w-full sm:w-1/2 md:w-full">
                                 <FuseAnimate delay={600}>
                                     <Typography className="px-16 pb-8 text-18 font-300">
                                         What are your top devices?
@@ -83,9 +84,9 @@ class AnalyticsDashboardApp extends Component {
                                 <div className="widget w-full p-16">
                                     <Widget7 data={widgets.widget7}/>
                                 </div>
-                            </div>
+                            </div> */}
 
-                            <div className="mb-32 w-full sm:w-1/2 md:w-full">
+                            {/* <div className="mb-32 w-full sm:w-1/2 md:w-full">
 
                                 <FuseAnimate delay={600}>
                                     <div className="px-16 pb-8 text-18 font-300">
@@ -96,9 +97,9 @@ class AnalyticsDashboardApp extends Component {
                                 <div className="widget w-full p-16">
                                     <Widget8 data={widgets.widget8}/>
                                 </div>
-                            </div>
+                            </div> */}
 
-                            <div className="mb-32 w-full sm:w-1/2 md:w-full">
+                            {/* <div className="mb-32 w-full sm:w-1/2 md:w-full">
                                 <FuseAnimate delay={600}>
                                     <Typography className="px-16 pb-8 text-18 font-300 lg:pt-0">
                                         What are your top campaigns sectors?
@@ -107,7 +108,7 @@ class AnalyticsDashboardApp extends Component {
                                 <div className="widget w-full p-16">
                                     <Widget9 data={campaignData}/>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </FuseAnimate>

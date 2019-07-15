@@ -17,7 +17,7 @@ const navigationConfig = [
                 title:'Business',
                 type:'item',
                 icon:'',
-                url:'/pages/coming-soon'
+                url:'/apps/business'
             },
             {
                 id:'consumer',

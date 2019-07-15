@@ -10,6 +10,7 @@ import {ECommerceAppConfig} from './e-commerce/ECommerceAppConfig';
 import {ScrumboardAppConfig} from './scrumboard/ScrumboardAppConfig';
 import {AcademyAppConfig} from './academy/AcademyAppConfig';
 import {NotesAppConfig} from './notes/NotesAppConfig';
+import {BusinessConfig} from './business/businessConfig';
 
 export const appsConfigs = [
     AnalyticsDashboardAppConfig,
@@ -23,5 +24,6 @@ export const appsConfigs = [
     ECommerceAppConfig,
     ScrumboardAppConfig,
     AcademyAppConfig,
-    NotesAppConfig
+    NotesAppConfig,
+    BusinessConfig
 ];

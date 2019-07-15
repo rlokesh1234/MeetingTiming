@@ -118,9 +118,9 @@ const Layout1 = ({classes, settings, children}) => {
                                                 {children}
                                             </div>
 
-                                            {layoutConfig.footer.display && layoutConfig.footer.position === 'below' && (
+                                            {/* {layoutConfig.footer.display && layoutConfig.footer.position === 'below' && (
                                                 <FooterLayout1/>
-                                            )}
+                                            )} */}
 
                                             <SettingsPanel/>
 
@@ -131,15 +131,15 @@ const Layout1 = ({classes, settings, children}) => {
                                         )}
                                     </div>
 
-                                    {layoutConfig.footer.display && layoutConfig.footer.style !== 'fixed' && layoutConfig.footer.position === 'above' && (
+                                    {/* {layoutConfig.footer.display && layoutConfig.footer.style !== 'fixed' && layoutConfig.footer.position === 'above' && (
                                         <FooterLayout1/>
-                                    )}
+                                    )} */}
 
                                 </FuseScrollbars>
 
-                                {layoutConfig.footer.display && layoutConfig.footer.style === 'fixed' && layoutConfig.footer.position === 'above' && (
+                                {/* {layoutConfig.footer.display && layoutConfig.footer.style === 'fixed' && layoutConfig.footer.position === 'above' && (
                                     <FooterLayout1/>
-                                )}
+                                )} */}
 
                             </div>
 
@@ -192,14 +192,14 @@ const Layout1 = ({classes, settings, children}) => {
                                             {renderRoutes(routes)}
                                             {children}
 
-                                            {layoutConfig.footer.display && layoutConfig.footer.position === 'below' && layoutConfig.footer.style !== 'fixed' && (
+                                            {/* {layoutConfig.footer.display && layoutConfig.footer.position === 'below' && layoutConfig.footer.style !== 'fixed' && (
                                                 <FooterLayout1/>
-                                            )}
+                                            )} */}
                                         </FuseScrollbars>
 
-                                        {layoutConfig.footer.display && layoutConfig.footer.position === 'below' && layoutConfig.footer.style === 'fixed' && (
+                                        {/* {layoutConfig.footer.display && layoutConfig.footer.position === 'below' && layoutConfig.footer.style === 'fixed' && (
                                             <FooterLayout1/>
-                                        )}
+                                        )} */}
 
                                         <SettingsPanel/>
 
