@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Typography} from '@material-ui/core';
 import {FuseAnimate} from '@fuse';
 import {connect} from 'react-redux';
+import { Doughnut } from 'react-chartjs-2';
 import {withRouter} from 'react-router-dom'
 import {bindActionCreators} from 'redux';
 import Widget1 from './widgets/Widget1';
@@ -14,6 +15,11 @@ import AdminComponent from './widgets/AdminComponent'
 import withReducer from 'app/store/withReducer';
 import * as Actions from './store/actions'
 import reducer from './store/reducers';
+import GeneralManager from './widgets/generalManager';
+import SeniorManager from './widgets/seniorManagers';
+import TeamLeader from './widgets/TeamLeaders';
+import Manager from './widgets/managers';
+
 
 class AnalyticsDashboardApp extends Component {
 
@@ -24,12 +30,11 @@ class AnalyticsDashboardApp extends Component {
 
     render()
     {
-        const {widgets,adminData,campaignData,sellerData} = this.props;
+        const {widgets,adminData,campaignData,sellerData,generalManagerData,seniorManagerData} = this.props;
         if ( !widgets )
         {
             return null;
         }
-        console.log(widgets.widget1,'widget')
         return (
             <div className="w-full">
 
@@ -41,15 +46,84 @@ class AnalyticsDashboardApp extends Component {
 
                         <div className="flex flex-1 flex-col min-w-0">
 
-                            {/* <div className="flex flex-col sm:flex sm:flex-row pb-32">
 
-                            {adminData && adminData.map((adminDetails,index)=>{
-                                    return (<div className="widget w-full sm:w-1/4 flex p-16" key={index}>
-                                                <AdminComponent adminDetails={adminDetails}/>
-                                            </div>)
-                                })}
-                               
-                            </div> */}
+                        <FuseAnimate delay={600}>
+                            <Typography className="p-16 pb-8 text-18 font-300">
+                                General Manager
+                            </Typography>
+                        </FuseAnimate>
+                          <div className="flex flex-col sm:flex sm:flex-row pb-32">
+                            {
+                              generalManagerData && generalManagerData.gmData.gData.map((data,index)=> {
+                                return(
+                                  <div key={index} className="">
+                                  <GeneralManager data={data}/>
+                                  </div>
+                                )
+                              }
+                            )
+                            }
+
+                            </div>
+
+                            <FuseAnimate delay={600}>
+                                <Typography className="p-16 pb-8 text-18 font-300">
+                                    Senior Manager
+                                </Typography>
+                            </FuseAnimate>
+                              <div className="flex flex-col sm:flex sm:flex-row pb-32">
+                                {
+                                  seniorManagerData && seniorManagerData.smData.sData.map((data,index)=> {
+                                    return(
+                                      <div key={index} className="">
+                                      <SeniorManager data={data}/>
+                                      </div>
+                                    )
+                                  }
+                                )
+                                }
+
+                                </div>
+
+
+                                <FuseAnimate delay={600}>
+                                    <Typography className="p-16 pb-8 text-18 font-300">
+                                        Manager
+                                    </Typography>
+                                </FuseAnimate>
+                                  <div className="flex flex-col sm:flex sm:flex-row pb-32">
+                                    {
+                                      generalManagerData && generalManagerData.mData.MData.map((data,index)=> {
+                                        return(
+                                          <div key={index} className="">
+                                          <Manager data={data}/>
+                                          </div>
+                                        )
+                                      }
+                                    )
+                                    }
+
+                                    </div>
+
+
+                                    <FuseAnimate delay={600}>
+                                        <Typography className="p-16 pb-8 text-18 font-300">
+                                        Team Leader
+                                        </Typography>
+                                    </FuseAnimate>
+                                      <div className="flex flex-col sm:flex sm:flex-row pb-32">
+                                        {
+                                          generalManagerData && generalManagerData.tlData.tData.map((data,index)=> {
+                                            return(
+                                              <div key={index} className="">
+                                              <TeamLeader data={data}/>
+                                              </div>
+                                            )
+                                          }
+                                        )
+                                        }
+
+                                        </div>
 
                             {/* <FuseAnimate delay={600}>
                                 <Typography className="px-16 pb-8 text-18 font-300">
@@ -128,6 +202,8 @@ function mapStateToProps({analyticsDashboardApp})
 {
     return {
         widgets: analyticsDashboardApp.widgets.data,
+        generalManagerData: analyticsDashboardApp.widgets.data,
+        seniorManagerData: analyticsDashboardApp.widgets.data,
         adminData:analyticsDashboardApp.widgets.adminData,
         campaignData:analyticsDashboardApp.widgets.campaignData,
         sellerData:analyticsDashboardApp.widgets.sellerData

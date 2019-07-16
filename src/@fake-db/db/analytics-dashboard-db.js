@@ -5,23 +5,23 @@ const analyticsDashboardAppDB = {
         widget1: {
             chartType: 'line',
             datasets : {
-                '2015': [
+                '2017': [
                     {
-                        label: 'Sales',
+                        label: 'Hours',
                         data : [1.9, 3, 3.4, 2.2, 2.9, 3.9, 2.5, 3.8, 4.1, 3.8, 3.2, 2.9],
                         fill : 'start'
                     }
                 ],
-                '2016': [
+                '2018': [
                     {
-                        label: 'Sales',
+                        label: 'Hours',
                         data : [2.2, 2.9, 3.9, 2.5, 3.8, 3.2, 2.9, 1.9, 3, 3.4, 4.1, 3.8],
                         fill : 'start'
                     }
                 ],
-                '2017': [
+                '2019': [
                     {
-                        label: 'Sales',
+                        label: 'Hours',
                         data : [3.9, 2.5, 3.8, 4.1, 1.9, 3, 3.8, 3.2, 2.9, 3.4, 2.2, 2.9],
                         fill : 'start'
                     }
@@ -76,14 +76,6 @@ const analyticsDashboardAppDB = {
                         }
                     ]
                 },
-                plugins            : {
-                    filler      : {
-                        propagate: false
-                    },
-                    xLabelsOnTop: {
-                        active: true
-                    }
-                }
             }
         },
         widget2: {
@@ -601,6 +593,186 @@ const analyticsDashboardAppDB = {
                     conversion: 4
                 }
             ]
+        },
+        mData:{
+          MData:[{
+          data:{
+            type:'rdar',
+            legend             : {
+                display: false
+            },
+            labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
+            datasets:[{
+              data:[10,20,55,80,100,70,40,25,50],
+              backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
+            }]
+          }
+        },{
+        data:{
+          type:'radar',
+          legend             : {
+              display: false
+          },
+          labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
+          datasets:[{
+            data:[50,20,80,130,75,40,90,120,5],
+            backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
+          }]
+        }
+      },{
+        data:{
+          type:'radar',
+          legend             : {
+              display: false
+          },
+          labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
+          datasets:[{
+            data:[0,200,50,300,150,100,80,250,500],
+            backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
+          }]
+        }
+      }
+      ]
+        },
+        tlData:{
+          tData:[{
+          data:{
+            type:'bar',
+            legend             : {
+                display: false
+            },
+            labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
+            datasets:[{
+              data:[10,20,55,80,100,70,40,25,50],
+              backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
+            }]
+          }
+        },{
+        data:{
+          type:'bar',
+          legend             : {
+              display: false
+          },
+          labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
+          datasets:[{
+            data:[50,20,80,130,75,40,90,120,5],
+            backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
+          }]
+        }
+      },{
+        data:{
+          type:'bar',
+          legend             : {
+              display: false
+          },
+          labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
+          datasets:[{
+            data:[0,200,50,300,150,100,80,250,500],
+            backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
+          }]
+        }
+      }
+      ]
+        },
+        smData:{
+          sData:[{
+          data:{
+            type:'polarArea',
+            legend             : {
+                display: false
+            },
+            labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
+            datasets:[{
+              data:[10,20,55,80,100,70,40,25,50],
+              backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
+            }]
+          }
+        },{
+        data:{
+          type:'polarArea',
+          legend             : {
+              display: false
+          },
+          labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
+          datasets:[{
+            data:[50,20,80,130,75,40,90,120,5],
+            backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
+          }]
+        }
+      },{
+        data:{
+          type:'polarArea',
+          legend             : {
+              display: false
+          },
+          labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
+          datasets:[{
+            data:[0,200,50,300,150,100,80,250,500],
+            backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
+          }]
+        }
+      }
+      ]
+        },
+        gmData:{
+          gData:[{
+            data:{
+              type:'doughnut',
+              options:{
+                legend             : {
+                    display: false
+                },
+                animation:{
+                  animateScale:true
+                }
+              },
+              labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
+              datasets:[{
+                data:[10,20,5,30,15,2,8,25,0],
+                backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black'],
+                hoverBackgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
+              }]
+            }
+          },
+          {
+            data:{
+              type:'doughnut',
+              options:{
+                legend             : {
+                    display: false
+                },
+                animation:{
+                  animateScale:true
+                }
+              },
+              labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
+              datasets:[{
+                data:[50,20,50,30,15,20,80,25,5],
+                backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black'],
+                hoverBackgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
+              }]
+          }
+        },
+        {
+          data:{
+            type:'doughnut',
+            options:{
+              legend             : {
+                  display: false
+              },
+              animation:{
+                animateScale:true
+              }
+            },
+            labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
+            datasets:[{
+              data:[0,20,50,30,15,20,80,25,5],
+              backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black'],
+              hoverBackgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
+            }]
+        }
+        }
+          ]
         }
     }
 };
