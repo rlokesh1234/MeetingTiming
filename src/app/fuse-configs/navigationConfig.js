@@ -39,7 +39,42 @@ const navigationConfig = [
                 type:'item',
                 icon:'',
                 url:'/pages/coming-soon'
-            }
+            },
+            {
+                'id'   : 'calendar',
+                'title': 'Calendar',
+                'type' : 'item',
+                'icon' : '',
+                'url'  : '/apps/calendar'
+            },
+            {
+                'id'   : 'Notes',
+                'title': 'Notes',
+                'type' : 'item',
+                'icon' : '',
+                'url'  : '/apps/notes'
+            },
+            {
+                'id'   : 'mail',
+                'title': 'Mail',
+                'type' : 'item',
+                'icon' : '',
+                'url'  : '/apps/mail'
+            },
+            {
+                'id'   : 'contacts',
+                'title': 'Contacts',
+                'type' : 'item',
+                'icon' : '',
+                'url'  : '/apps/contacts'
+            },
+            {
+                'id'   : 'calendar',
+                'title': 'Calendar',
+                'type' : 'item',
+                'icon' : 'today',
+                'url'  : '/apps/calendar'
+            },
             // {
             //     'id' : 'shops',
             //     'title':'Shops',
@@ -57,7 +92,7 @@ const navigationConfig = [
             //             'title': 'Shop Create',
             //             'type' : 'item',
             //             'url'  : '/pages/coming-soon'
-            //         }  
+            //         }
             //     ]
             // },
             // {
@@ -84,7 +119,7 @@ const navigationConfig = [
             //             'title': 'Refunds',
             //             'type' : 'item',
             //             'url'  : '/pages/coming-soon'
-            //         }  
+            //         }
             //     ]
             // },
             // {
@@ -104,7 +139,7 @@ const navigationConfig = [
             //             'title': 'New Banners',
             //             'type' : 'item',
             //             'url'  : '/pages/coming-soon'
-            //         }  
+            //         }
             //     ]
             // },
             // {
@@ -138,7 +173,7 @@ const navigationConfig = [
             //             'title': 'Sendmail',
             //             'type' : 'item',
             //             'url'  : '/pages/coming-soon'
-            //         }  
+            //         }
             //     ]
             // },
             // {
@@ -186,7 +221,7 @@ const navigationConfig = [
             //             'title': 'Payout',
             //             'type' : 'item',
             //             'url'  : '/pages/coming-soon'
-            //         }  
+            //         }
             //     ]
             // },
             // {
@@ -220,7 +255,7 @@ const navigationConfig = [
             //                     'url'  : '/pages/coming-soon'
             //                 },
             //             ]
-            //         }  
+            //         }
             //     ]
             // },
             // {
@@ -247,7 +282,7 @@ const navigationConfig = [
             //             'type' : 'item',
             //             'url'  : '/pages/coming-soon'
             //         },
-                     
+
             //     ]
             // },
             // {
@@ -267,7 +302,7 @@ const navigationConfig = [
             //             'title': 'Logout',
             //             'type' : 'item',
             //             'url'  : '/pages/coming-soon'
-            //         }  
+            //         }
             //     ]
             // },
             // {
