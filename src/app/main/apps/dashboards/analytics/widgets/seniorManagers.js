@@ -1,54 +1,58 @@
 import React, {Component} from 'react';
-import {withStyles, Button, MuiThemeProvider, Typography} from '@material-ui/core';
-import {FuseAnimate} from '@fuse';
-import {Polar,defaults} from 'react-chartjs-2';
-import _ from '@lodash';
-import connect from 'react-redux/es/connect/connect';
-
-defaults.global.legend.display = false
-
-const styles = theme => ({
-    root: {
-        background     : 'linear-gradient(to right, ' + theme.palette.primary.dark + ' 0%, ' + theme.palette.primary.main + ' 100%)',
-    }
-});
+import {Typography, Paper, Button} from '@material-ui/core';
+import {Bar, Line} from 'react-chartjs-2';
+import _ from 'lodash';
 
 class SeniorManager extends Component {
-
     state = {
-        dataset: '2017'
+        currentRange: 'D'
     };
 
-    setDataSet = (dataset) => {
-        this.setState({dataset});
+    handleChangeRange = (currentRange) => {
+        this.setState({currentRange});
     };
 
     render()
     {
-        const {classes, mainThemeDark, data, theme} = this.props;
-
+        const {widget: widgetRaw} = this.props;
+        const {currentRange} = this.state;
+        const widget = _.merge({}, widgetRaw);
 
         return (
-            <MuiThemeProvider theme={mainThemeDark}>
-                <div className={classes.root}>
-
-                    <div className="container relative h-200 sm:h-256 pb-16 ">
-                        <Polar
-                            data={data.data}
-                            options={data.data.options}
+            <Paper className="w-full rounded-8 shadow-none border-1">
+                <div className="flex items-center justify-between px-16 py-16 border-b-1">
+                    <Typography className="text-16">{widget.title}</Typography>
+                    <div className="items-center">
+                        {Object.entries(widget.ranges).map(([key, n]) => {
+                            return (
+                                <Button
+                                    key={key}
+                                    className="normal-case shadow-none px-16"
+                                    onClick={() => this.handleChangeRange(key)}
+                                    color={currentRange === key ? "secondary" : "default"}
+                                    variant={currentRange === key ? "contained" : "text"}
+                                >
+                                    {n}
+                                </Button>
+                            )
+                        })}
+                    </div>
+                </div>
+                <div className="flex flex-row flex-wrap">
+                    <div className="w-full p-8 min-h-420 h-420">
+                        <Bar
+                            clasName="w-full h-full"
+                            data={{
+                                labels  : widget.mainChart[currentRange].labels,
+                                datasets: widget.mainChart[currentRange].datasets
+                            }}
+                            options={widget.mainChart.options}
                         />
                     </div>
                 </div>
-            </MuiThemeProvider>
+            </Paper>
         );
     }
 }
 
-function mapStateToProps({fuse})
-{
-    return {
-        mainThemeDark: fuse.settings.mainThemeDark
-    }
-}
-
-export default withStyles(styles, {withTheme: true})(connect(mapStateToProps)(SeniorManager));
+export default SeniorManager;

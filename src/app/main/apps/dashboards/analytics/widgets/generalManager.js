@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {withStyles, Button, MuiThemeProvider, Typography} from '@material-ui/core';
+import {withStyles, Button, MuiThemeProvider, Typography,Paper} from '@material-ui/core';
 import {FuseAnimate} from '@fuse';
 import {Doughnut} from 'react-chartjs-2';
 import _ from '@lodash';
@@ -27,17 +27,21 @@ class GeneralManager extends Component {
 
 
         return (
-            <MuiThemeProvider theme={mainThemeDark}>
-                <div className={classes.root}>
 
-                    <div className="container relative h-200 sm:h-256 pb-16 ">
-                        <Doughnut
-                            data={data.data}
-                            options={data.data.options}
-                        />
-                    </div>
-                </div>
-            </MuiThemeProvider>
+          <Paper className="w-full rounded-8 shadow-none border-1">
+              <div className="flex items-center justify-between px-16 py-16 border-b-1">
+                  <Typography className="text-16">{data.data.title}</Typography>
+              </div>
+              <div className="flex flex-row flex-wrap">
+                  <div className="w-full p-8 min-h-420 h-420">
+                  <Doughnut
+                      data={data.data}
+                      options={data.data.options}
+                  />
+                  </div>
+              </div>
+          </Paper>
+
         );
     }
 }

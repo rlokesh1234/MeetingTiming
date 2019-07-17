@@ -31,6 +31,7 @@ class AnalyticsDashboardApp extends Component {
     render()
     {
         const {widgets,adminData,campaignData,sellerData,generalManagerData,seniorManagerData} = this.props;
+        console.log(generalManagerData,'general')
         if ( !widgets )
         {
             return null;
@@ -56,7 +57,7 @@ class AnalyticsDashboardApp extends Component {
                             {
                               generalManagerData && generalManagerData.gmData.gData.map((data,index)=> {
                                 return(
-                                  <div key={index} className="">
+                                  <div key={index} className="flex p-16">
                                   <GeneralManager data={data}/>
                                   </div>
                                 )
@@ -75,8 +76,8 @@ class AnalyticsDashboardApp extends Component {
                                 {
                                   seniorManagerData && seniorManagerData.smData.sData.map((data,index)=> {
                                     return(
-                                      <div key={index} className="">
-                                      <SeniorManager data={data}/>
+                                      <div key={index} className="flex p-16">
+                                      <SeniorManager widget={data}/>
                                       </div>
                                     )
                                   }
@@ -95,7 +96,7 @@ class AnalyticsDashboardApp extends Component {
                                     {
                                       generalManagerData && generalManagerData.mData.MData.map((data,index)=> {
                                         return(
-                                          <div key={index} className="">
+                                          <div key={index} className="flex p-16">
                                           <Manager data={data}/>
                                           </div>
                                         )
@@ -111,19 +112,19 @@ class AnalyticsDashboardApp extends Component {
                                         Team Leader
                                         </Typography>
                                     </FuseAnimate>
-                                      <div className="flex flex-col sm:flex sm:flex-row pb-32">
-                                        {
-                                          generalManagerData && generalManagerData.tlData.tData.map((data,index)=> {
-                                            return(
-                                              <div key={index} className="">
-                                              <TeamLeader data={data}/>
-                                              </div>
-                                            )
-                                          }
-                                        )
+                                    <div className="flex flex-col sm:flex sm:flex-row pb-32">
+                                      {
+                                        generalManagerData && generalManagerData.tlData.tData.map((data,index)=> {
+                                          return(
+                                            <div key={index} className="flex p-16">
+                                            <TeamLeader data={data}/>
+                                            </div>
+                                          )
                                         }
+                                      )
+                                      }
 
-                                        </div>
+                                      </div>
 
                             {/* <FuseAnimate delay={600}>
                                 <Typography className="px-16 pb-8 text-18 font-300">

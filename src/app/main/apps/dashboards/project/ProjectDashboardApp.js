@@ -78,7 +78,7 @@ class ProjectDashboardApp extends Component {
     render()
     {
         const {widgets, projects, classes,weatherData} = this.props;
-       
+
         const {tabValue, selectedProjectId, projectMenuEl} = this.state;
 
         if ( !widgets || !projects )

@@ -597,87 +597,373 @@ const analyticsDashboardAppDB = {
         mData:{
           MData:[{
           data:{
-            type:'rdar',
-            legend             : {
+            type:'line',
+            title:'Manager1',
+            options    : {
+                spanGaps           : false,
+                legend             : {
+                    display: false
+                },
+                maintainAspectRatio: false,
+                elements           : {
+                    point: {
+                        radius          : 2,
+                        borderWidth     : 1,
+                        hoverRadius     : 2,
+                        hoverBorderWidth: 1
+                    },
+                    line : {
+                        tension: 0
+                    }
+                },
+                layout             : {
+                    padding: {
+                        top   : 24,
+                        left  : 16,
+                        right : 16,
+                        bottom: 16
+                    }
+                },
+                scales             : {
+                    xAxes: [
+                        {
+                            display: false
+                        }
+                    ],
+                    yAxes: [
+                        {
+                            display: false,
+                            ticks  : {
+                                // min: 100,
+                                // max: 500
+                            }
+                        }
+                    ]
+                }
+            },
+            legend  : {
                 display: false
             },
             labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
             datasets:[{
               data:[10,20,55,80,100,70,40,25,50],
-              backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
+              fill:false,
             }]
           }
         },{
         data:{
-          type:'radar',
+          type:'line',
+          title:'Manager2',
+          options    : {
+              spanGaps           : false,
+              legend             : {
+                  display: false
+              },
+              maintainAspectRatio: false,
+              elements           : {
+                  point: {
+                      radius          : 2,
+                      borderWidth     : 1,
+                      hoverRadius     : 2,
+                      hoverBorderWidth: 1
+                  },
+                  line : {
+                      tension: 0
+                  }
+              },
+              layout             : {
+                  padding: {
+                      top   : 24,
+                      left  : 16,
+                      right : 16,
+                      bottom: 16
+                  }
+              },
+              scales             : {
+                  xAxes: [
+                      {
+                          display: false
+                      }
+                  ],
+                  yAxes: [
+                      {
+                          display: false,
+                          ticks  : {
+                              // min: 100,
+                              // max: 500
+                          }
+                      }
+                  ]
+              }
+          },
           legend             : {
               display: false
           },
           labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
           datasets:[{
             data:[50,20,80,130,75,40,90,120,5],
-            backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
+            fill:false
           }]
         }
       },{
         data:{
-          type:'radar',
-          legend             : {
+          type:'line',
+          title:'Manager3',
+          options    : {
+              spanGaps           : false,
+              legend             : {
+                  display: false
+              },
+              maintainAspectRatio: false,
+              elements           : {
+                  point: {
+                      radius          : 2,
+                      borderWidth     : 1,
+                      hoverRadius     : 2,
+                      hoverBorderWidth: 1
+                  },
+                  line : {
+                      tension: 0
+                  }
+              },
+              layout             : {
+                  padding: {
+                      top   : 24,
+                      left  : 16,
+                      right : 16,
+                      bottom: 16
+                  }
+              },
+              scales             : {
+                  xAxes: [
+                      {
+                          display: false
+                      }
+                  ],
+                  yAxes: [
+                      {
+                          display: false,
+                          ticks  : {
+                              // min: 100,
+                              // max: 500
+                          }
+                      }
+                  ]
+              }
+          },
+          legend  : {
               display: false
           },
           labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
           datasets:[{
             data:[0,200,50,300,150,100,80,250,500],
-            backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
-          }]
-        }
-      }
-      ]
-        },
-        tlData:{
-          tData:[{
-          data:{
-            type:'bar',
-            legend             : {
-                display: false
-            },
-            labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
-            datasets:[{
-              data:[10,20,55,80,100,70,40,25,50],
-              backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
-            }]
-          }
-        },{
-        data:{
-          type:'bar',
-          legend             : {
-              display: false
-          },
-          labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
-          datasets:[{
-            data:[50,20,80,130,75,40,90,120,5],
-            backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
-          }]
-        }
-      },{
-        data:{
-          type:'bar',
-          legend             : {
-              display: false
-          },
-          labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
-          datasets:[{
-            data:[0,200,50,300,150,100,80,250,500],
-            backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
+            fill:false
           }]
         }
       }
       ]
         },
         smData:{
-          sData:[{
+          sData:[
+            {
+            'title'     : 'Senior Manager1',
+            'ranges'    : {
+                'D': 'Duration',
+            },
+            'mainChart' : {
+                'D'     : {
+                    labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                    datasets: [
+                        {
+                            type                : 'bar',
+                            label               : 'Hours',
+                            data                : [37, 32, 39, 27, 18, 24, 20],
+                            backgroundColor     : '#42BFF7',
+                            hoverBackgroundColor: '#87cdf7'
+                        },
+                        {
+                            type                : 'bar',
+                            label               : 'Hours',
+                            data                : [9, 12, 9, 12, 7, 8, 16],
+                            backgroundColor     : '#c6ecfd',
+                            hoverBackgroundColor: '#d7effd'
+                        }
+                    ]
+                },
+                'options': {
+                    responsive         : true,
+                    maintainAspectRatio: false,
+                    legend             : {
+                        display: false
+                    },
+                    tooltips           : {
+                        mode: 'label'
+                    },
+                    scales             : {
+                        xAxes: [
+                            {
+                                stacked           : true,
+                                display           : true,
+                                gridLines         : {
+                                    display: false
+                                },
+                                labels            : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                                categoryPercentage: 1
+                            }
+                        ],
+                        yAxes: [
+                            {
+                                stacked  : true,
+                                type     : 'linear',
+                                display  : true,
+                                position : 'left',
+                                gridLines: {
+                                    display: false
+                                },
+                                labels   : {
+                                    show: true
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+      },
+            {
+                  'title'     : 'Senior Manager2',
+                  'ranges'    : {
+                      'D': 'Duration',
+                  },
+                  'mainChart' : {
+                      'D'     : {
+                          labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                          datasets: [
+                              {
+                                  type                : 'bar',
+                                  label               : 'Hours',
+                                  data                : [37, 32, 39, 27, 18, 24, 20],
+                                  backgroundColor     : '#42BFF7',
+                                  hoverBackgroundColor: '#87cdf7'
+                              },
+                              {
+                                  type                : 'bar',
+                                  label               : 'Hours',
+                                  data                : [9, 12, 9, 12, 7, 8, 16],
+                                  backgroundColor     : '#c6ecfd',
+                                  hoverBackgroundColor: '#d7effd'
+                              }
+                          ]
+                      },
+                      'options': {
+                          responsive         : true,
+                          maintainAspectRatio: false,
+                          legend             : {
+                              display: false
+                          },
+                          tooltips           : {
+                              mode: 'label'
+                          },
+                          scales             : {
+                              xAxes: [
+                                  {
+                                      stacked           : true,
+                                      display           : true,
+                                      gridLines         : {
+                                          display: false
+                                      },
+                                      labels            : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                                      categoryPercentage: 1
+                                  }
+                              ],
+                              yAxes: [
+                                  {
+                                      stacked  : true,
+                                      type     : 'linear',
+                                      display  : true,
+                                      position : 'left',
+                                      gridLines: {
+                                          display: false
+                                      },
+                                      labels   : {
+                                          show: true
+                                      }
+                                  }
+                              ]
+                          }
+                      }
+                  },
+            },
+            {
+            'title'     : 'Senior Manager3',
+            'ranges'    : {
+                'D': 'Duration',
+            },
+            'mainChart' : {
+                'D'     : {
+                    labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                    datasets: [
+                        {
+                            type                : 'bar',
+                            label               : 'Hours',
+                            data                : [37, 32, 39, 27, 18, 24, 20],
+                            backgroundColor     : '#42BFF7',
+                            hoverBackgroundColor: '#87cdf7'
+                        },
+                        {
+                            type                : 'bar',
+                            label               : 'Hours',
+                            data                : [9, 12, 9, 12, 7, 8, 16],
+                            backgroundColor     : '#c6ecfd',
+                            hoverBackgroundColor: '#d7effd'
+                        }
+                    ]
+                },
+                'options': {
+                    responsive         : true,
+                    maintainAspectRatio: false,
+                    legend             : {
+                        display: false
+                    },
+                    tooltips           : {
+                        mode: 'label'
+                    },
+                    scales             : {
+                        xAxes: [
+                            {
+                                stacked           : true,
+                                display           : true,
+                                gridLines         : {
+                                    display: false
+                                },
+                                labels            : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                                categoryPercentage: 1
+                            }
+                        ],
+                        yAxes: [
+                            {
+                                stacked  : true,
+                                type     : 'linear',
+                                display  : true,
+                                position : 'left',
+                                gridLines: {
+                                    display: false
+                                },
+                                labels   : {
+                                    show: true
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+      }
+      ]
+        },
+        tlData:{
+          tData:[{
           data:{
-            type:'polarArea',
+            type:'pie',
+              title:'Team Leader1',
             legend             : {
                 display: false
             },
@@ -689,7 +975,8 @@ const analyticsDashboardAppDB = {
           }
         },{
         data:{
-          type:'polarArea',
+          type:'pie',
+            title:'Team Leader2',
           legend             : {
               display: false
           },
@@ -701,7 +988,8 @@ const analyticsDashboardAppDB = {
         }
       },{
         data:{
-          type:'polarArea',
+          type:'pie',
+          title:'Team Leader3',
           legend             : {
               display: false
           },
@@ -718,6 +1006,7 @@ const analyticsDashboardAppDB = {
           gData:[{
             data:{
               type:'doughnut',
+              title:'General Manager1',
               options:{
                 legend             : {
                     display: false
@@ -737,6 +1026,7 @@ const analyticsDashboardAppDB = {
           {
             data:{
               type:'doughnut',
+              title:'General Manager2',
               options:{
                 legend             : {
                     display: false
@@ -756,6 +1046,7 @@ const analyticsDashboardAppDB = {
         {
           data:{
             type:'doughnut',
+            title:'General Manager3',
             options:{
               legend             : {
                   display: false

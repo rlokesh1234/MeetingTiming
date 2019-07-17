@@ -16,25 +16,25 @@ const navigationConfig = [
                 id:'business',
                 title:'Business',
                 type:'item',
-                icon:'',
+                icon:'assets/images/icons/business-contact-16.png',
                 url:'/apps/business'
             },
             {
                 id:'consumer',
                 title:'Consumer',
                 type:'item',
-                icon:'',
+                icon:'assets/images/icons/consumers-16.png',
                 url:'/pages/coming-soon'
             },
             {
                 id:'integratedTechnology',
                 title:'Integrated Technology',
                 type:'item',
-                icon:'',
+                icon:'assets/images/icons/integrated-webcam-16.png',
                 url:'/pages/coming-soon'
             },
             {
-                id:'humanRsources',
+                id:'humanResources',
                 title:'Human Resource',
                 type:'item',
                 icon:'',
@@ -44,37 +44,30 @@ const navigationConfig = [
                 'id'   : 'calendar',
                 'title': 'Calendar',
                 'type' : 'item',
-                'icon' : '',
+                'icon' : 'assets/images/icons/calendar-4-16.png',
                 'url'  : '/apps/calendar'
             },
             {
                 'id'   : 'Notes',
                 'title': 'Notes',
                 'type' : 'item',
-                'icon' : '',
+                'icon' : 'assets/images/icons/note-2-16.png',
                 'url'  : '/apps/notes'
             },
             {
                 'id'   : 'mail',
                 'title': 'Mail',
                 'type' : 'item',
-                'icon' : '',
+                'icon' : 'assets/images/icons/email-5-16.png',
                 'url'  : '/apps/mail'
             },
             {
                 'id'   : 'contacts',
                 'title': 'Contacts',
                 'type' : 'item',
-                'icon' : '',
+                'icon' : 'assets/images/icons/contacts-2-16.png',
                 'url'  : '/apps/contacts'
-            },
-            {
-                'id'   : 'calendar',
-                'title': 'Calendar',
-                'type' : 'item',
-                'icon' : 'today',
-                'url'  : '/apps/calendar'
-            },
+            }
             // {
             //     'id' : 'shops',
             //     'title':'Shops',

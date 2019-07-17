@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
-import {withStyles, Button, MuiThemeProvider, Typography} from '@material-ui/core';
+import {withStyles, Button, MuiThemeProvider, Typography,Paper} from '@material-ui/core';
 import {FuseAnimate} from '@fuse';
-import {Bar} from 'react-chartjs-2';
+import {Pie,defaults} from 'react-chartjs-2';
 import _ from '@lodash';
 import connect from 'react-redux/es/connect/connect';
+
+defaults.global.legend.display = false
 
 const styles = theme => ({
     root: {
@@ -24,20 +26,25 @@ class TeamLeader extends Component {
     render()
     {
         const {classes, mainThemeDark, data, theme} = this.props;
+        console.log(data,'data');
 
 
         return (
-            <MuiThemeProvider theme={mainThemeDark}>
-                <div className={classes.root}>
 
-                    <div className="container relative h-200 sm:h-256 pb-16 ">
-                        <Bar
-                            data={data.data}
-                            options={data.data.options}
-                        />
-                    </div>
-                </div>
-            </MuiThemeProvider>
+          <Paper className="w-full rounded-8 shadow-none border-1">
+              <div className="flex items-center justify-between px-16 py-16 border-b-1">
+                  <Typography className="text-16">{data.data.title}</Typography>
+
+              </div>
+              <div className="flex flex-row flex-wrap">
+                  <div className="w-full p-8 min-h-420 h-420">
+                  <Pie
+                      data={data.data}
+                      options={data.data.options}
+                  />
+                  </div>
+              </div>
+          </Paper>
         );
     }
 }

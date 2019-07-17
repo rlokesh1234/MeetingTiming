@@ -20,8 +20,8 @@ const styles = theme => ({
 function Logo({classes})
 {
     return (
-        <div className={classNames(classes.root, "flex items-center")}>
-            <img className="logo-icon" src="assets/images/logos/omantel_logo.png" alt="logo"/>
+        <div className={classNames(classes.root, "flex items-center my-20")}>
+            <img className="logo-icon mt-60" src="assets/images/logos/omantel-300x100.png" alt="logo"/>
         </div>
     );
 }
