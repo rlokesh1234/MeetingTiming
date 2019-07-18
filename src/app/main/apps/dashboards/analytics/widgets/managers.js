@@ -35,9 +35,13 @@ class Manager extends Component {
               <div className="flex flex-row flex-wrap">
                   <div className="w-full p-8 min-h-420 h-420">
                   <Line
-                      data={data.data}
-                      options={data.data.options}
-                  />
+                                          data={{
+                                              labels  : data.data.labels,
+                                              datasets: data.data.datasets
+                                          }}
+                                          options={data.data.options}
+                                      />
+  
                   </div>
               </div>
           </Paper>

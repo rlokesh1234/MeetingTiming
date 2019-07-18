@@ -1,5 +1,5 @@
 import React from 'react';
-import {withStyles, ListItem, ListItemText} from '@material-ui/core';
+import {withStyles, ListItem, ListItemText, Icon} from '@material-ui/core';
 import {NavLink, withRouter} from 'react-router-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
@@ -51,7 +51,7 @@ const styles = theme => ({
 
 function FuseNavVerticalItem({item, classes, nestedLevel, userRole, navbarCloseMobile, active})
 {
-   
+
     if ( item.auth && (!item.auth.includes(userRole) || (userRole !== 'guest' && item.auth.length === 1 && item.auth.includes('guest'))) )
     {
         return null;
@@ -70,7 +70,7 @@ function FuseNavVerticalItem({item, classes, nestedLevel, userRole, navbarCloseM
             onClick={navbarCloseMobile}
             exact={item.exact}
         >
-          {item.icon && <img src={item.icon} alt="logo"/>}
+          {item.img ? <img src={item.img} alt="logo"/> : <Icon className="list-item-icon text-16 flex-no-shrink" color="action">{item.icon}</Icon>}
             <ListItemText className="list-item-text" primary={item.title} classes={{primary: 'text-14 list-item-text-primary'}}/>
             {item.badge && (
                 <FuseNavBadge badge={item.badge}/>

@@ -599,165 +599,110 @@ const analyticsDashboardAppDB = {
           data:{
             type:'line',
             title:'Manager1',
-            options    : {
-                spanGaps           : false,
-                legend             : {
-                    display: false
-                },
-                maintainAspectRatio: false,
-                elements           : {
-                    point: {
-                        radius          : 2,
-                        borderWidth     : 1,
-                        hoverRadius     : 2,
-                        hoverBorderWidth: 1
+            options: {
+              legend             : {
+                display: false
                     },
-                    line : {
-                        tension: 0
-                    }
-                },
-                layout             : {
-                    padding: {
-                        top   : 24,
-                        left  : 16,
-                        right : 16,
-                        bottom: 16
-                    }
-                },
-                scales             : {
-                    xAxes: [
-                        {
-                            display: false
-                        }
-                    ],
-                    yAxes: [
-                        {
-                            display: false,
-                            ticks  : {
-                                // min: 100,
-                                // max: 500
-                            }
-                        }
-                    ]
-                }
-            },
+                      maintainAspectRatio: false,
+                      scales             : {
+                          xAxes: [
+                              {
+                                  display: false
+                              }
+                          ],
+                          yAxes: [
+                              {
+                                  display: false
+                              }
+                          ]
+                      }
+                  },
             legend  : {
                 display: false
             },
-            labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
+            labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL'],
             datasets:[{
-              data:[10,20,55,80,100,70,40,25,50],
-              fill:false,
+              label          : 'Created',
+              data           : [5, 8, 5, 6, 7, 8, 7],
+              fill           : true,
+              backgroundColor: '#42BFF7',
+              pointRadius    : 0,
+              pointHitRadius : 20,
+              borderWidth    : 0
             }]
           }
         },{
         data:{
           type:'line',
           title:'Manager2',
-          options    : {
-              spanGaps           : false,
-              legend             : {
-                  display: false
-              },
-              maintainAspectRatio: false,
-              elements           : {
-                  point: {
-                      radius          : 2,
-                      borderWidth     : 1,
-                      hoverRadius     : 2,
-                      hoverBorderWidth: 1
-                  },
-                  line : {
-                      tension: 0
-                  }
-              },
-              layout             : {
-                  padding: {
-                      top   : 24,
-                      left  : 16,
-                      right : 16,
-                      bottom: 16
-                  }
-              },
-              scales             : {
-                  xAxes: [
-                      {
-                          display: false
-                      }
-                  ],
-                  yAxes: [
-                      {
-                          display: false,
-                          ticks  : {
-                              // min: 100,
-                              // max: 500
-                          }
-                      }
-                  ]
-              }
-          },
+          options: {
+                            legend             : {
+                                display: false
+                            },
+                            maintainAspectRatio: false,
+                            scales             : {
+                                xAxes: [
+                                    {
+                                        display: false
+                                    }
+                                ],
+                                yAxes: [
+                                    {
+                                        display: false
+                                    }
+                                ]
+                            }
+                        },
           legend             : {
               display: false
           },
-          labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
+          labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL'],
           datasets:[{
-            data:[50,20,80,130,75,40,90,120,5],
-            fill:false
+
+                                    label          : 'Created',
+                                    data           : [6, 3, 7, 5, 5, 4, 7],
+                                    fill           : true,
+                                    backgroundColor: '#42BFF7',
+                                    pointRadius    : 0,
+                                    pointHitRadius : 20,
+                                    borderWidth    : 0
+
           }]
         }
       },{
         data:{
           type:'line',
           title:'Manager3',
-          options    : {
-              spanGaps           : false,
-              legend             : {
-                  display: false
-              },
-              maintainAspectRatio: false,
-              elements           : {
-                  point: {
-                      radius          : 2,
-                      borderWidth     : 1,
-                      hoverRadius     : 2,
-                      hoverBorderWidth: 1
-                  },
-                  line : {
-                      tension: 0
-                  }
-              },
-              layout             : {
-                  padding: {
-                      top   : 24,
-                      left  : 16,
-                      right : 16,
-                      bottom: 16
-                  }
-              },
-              scales             : {
-                  xAxes: [
-                      {
-                          display: false
-                      }
-                  ],
-                  yAxes: [
-                      {
-                          display: false,
-                          ticks  : {
-                              // min: 100,
-                              // max: 500
-                          }
-                      }
-                  ]
-              }
-          },
+          options: {
+                              legend             : {
+                                  display: false
+                              },
+                              maintainAspectRatio: false,
+                              scales             : {
+                                  xAxes: [
+                                      {
+                                          display: false
+                                      }
+                                  ],
+                                  yAxes: [
+                                      {
+                                          display: false
+                                      }
+                                  ]
+                              }
+                          },
           legend  : {
               display: false
           },
-          labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
+          labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL'],
           datasets:[{
-            data:[0,200,50,300,150,100,80,250,500],
-            fill:false
+            label          : 'Created',
+                                    data           : [6, 3, 7, 5, 5, 4, 7],
+                                    fill           : true,
+                                    backgroundColor: '#42BFF7',
+                                    pointRadius    : 0,
+                                    pointHitRadius : 20,
+                                    borderWidth    : 0
           }]
         }
       }
