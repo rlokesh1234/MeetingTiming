@@ -907,48 +907,68 @@ const analyticsDashboardAppDB = {
         tlData:{
           tData:[{
           data:{
-            type:'pie',
               title:'Team Leader1',
             legend             : {
                 display: false
             },
-            labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
-            datasets:[{
-              data:[10,20,55,80,100,70,40,25,50],
-              backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
-            }]
+            options: {
+                                legend             : {
+                                    display: false
+                                },
+                                maintainAspectRatio: false,
+                            },
+            labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL'],
+            datasets:[ {
+      label: 'My First dataset',
+      backgroundColor: '#42BFF7',
+      data: [65, 59, 80, 81, 56, 55, 40]
+    }]
           }
         },{
         data:{
-          type:'pie',
+
             title:'Team Leader2',
           legend             : {
               display: false
           },
-          labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
-          datasets:[{
-            data:[50,20,80,130,75,40,90,120,5],
-            backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
-          }]
+          options: {
+                              legend             : {
+                                  display: false
+                              },
+                              maintainAspectRatio: false,
+                          },
+          labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL'],
+          datasets:[ {
+      label: 'My First dataset',
+      backgroundColor: '#42BFF7',
+      data: [65, 59, 80, 56, 55, 40,80]
+    }]
         }
       },{
         data:{
-          type:'pie',
           title:'Team Leader3',
           legend             : {
               display: false
           },
-          labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
-          datasets:[{
-            data:[0,200,50,300,150,100,80,250,500],
-            backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
-          }]
+          options: {
+                              legend             : {
+                                  display: false
+                              },
+                              maintainAspectRatio: false,
+                          },
+          labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL'],
+          datasets:[ {
+      label: 'My First dataset',
+      backgroundColor: '#42BFF7',
+      data: [65, 59, 80, 81, 56, 40,55]
+    }]
         }
       }
       ]
         },
         gmData:{
-          gData:[{
+          gData:[
+            {
             data:{
               type:'doughnut',
               title:'General Manager1',

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {withStyles, Button, MuiThemeProvider, Typography,Paper} from '@material-ui/core';
 import {FuseAnimate} from '@fuse';
-import {Pie,defaults} from 'react-chartjs-2';
+import {HorizontalBar ,defaults} from 'react-chartjs-2';
 import _ from '@lodash';
 import connect from 'react-redux/es/connect/connect';
 
@@ -38,7 +38,7 @@ class TeamLeader extends Component {
               </div>
               <div className="flex flex-row flex-wrap">
                   <div className="w-full p-8 min-h-420 h-420">
-                  <Pie
+                  <HorizontalBar
                       data={data.data}
                       options={data.data.options}
                   />
