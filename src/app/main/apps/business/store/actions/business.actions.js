@@ -8,6 +8,7 @@ export function getWidgets()
 
     return (dispatch) =>
         request.then((response) =>
+        //console.log(response,'resp'),
             dispatch({
                 type   : GET_WIDGETS,
                 payload: response.data

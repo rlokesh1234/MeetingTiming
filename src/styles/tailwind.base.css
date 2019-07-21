@@ -9,8 +9,8 @@
 }
 
 .buttonDefault{
-  background-color: #000;
-  color: #fff;
+  background-color: transparent;
+  color: #000;
   padding: 8px 16px;
   border-radius: 4px;
   font-family: Muli,Roboto,"Helvetica",Arial,sans-serif;

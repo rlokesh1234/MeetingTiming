@@ -1425,7 +1425,7 @@ selectUnit=(e,unit,index)=>{
 
         //HUmarn Resources
 
-        if(selectedUnit == 'Integrated Technology'){
+        if(selectedUnit == 'Human Resources'){
           generalData=[
             {
               data:{
@@ -1922,6 +1922,8 @@ selectUnit=(e,unit,index)=>{
                           }) : ''
                         }
                         </div>
+
+                
 
                           <div className="flex flex-col sm:flex sm:flex-row pb-32">
                             {
