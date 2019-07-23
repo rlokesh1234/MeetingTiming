@@ -21,7 +21,7 @@ function Logo({classes})
 {
     return (
         <div className={classNames(classes.root, "flex items-center my-20")}>
-            <img className="logo-icon mt-60" src="assets/images/logos/omantel-300x100.png" alt="logo"/>
+            <img className="logo-icon mt-60" src="assets/images/logos/omantel.png" alt="logo"/>
         </div>
     );
 }

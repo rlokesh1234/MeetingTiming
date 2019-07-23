@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 
+
 .listValue{
     min-width: 30px;
     text-align: center;
@@ -30,3 +31,7 @@
   line-height: 1.75;
   margin:0 10px 0 0;
 }
+/*
+.slick-slider, .slick-track, .slick-slide{
+  width:100% !important
+} */

@@ -1027,7 +1027,27 @@ const analyticsDashboardAppDB = {
               hoverBackgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
             }]
         }
-        }
+      },
+      {
+        data:{
+          type:'doughnut',
+          title:'General Manager4',
+          options:{
+            legend             : {
+                display: false
+            },
+            animation:{
+              animateScale:true
+            }
+          },
+          labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
+          datasets:[{
+            data:[35,20,50,30,15,20,80,25,5],
+            backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black'],
+            hoverBackgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
+          }]
+      }
+      }
           ]
         }
     }

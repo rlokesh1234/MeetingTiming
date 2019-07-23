@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Slider from "react-slick";
 import {withStyles, Button, MuiThemeProvider, Typography,Paper} from '@material-ui/core';
 import {FuseAnimate} from '@fuse';
 import {Doughnut} from 'react-chartjs-2';

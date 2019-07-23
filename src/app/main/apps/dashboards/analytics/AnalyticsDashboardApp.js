@@ -3,6 +3,7 @@ import {Typography} from '@material-ui/core';
 import classNames from 'classnames';
 import {FuseAnimate} from '@fuse';
 import {connect} from 'react-redux';
+import Slider from "react-slick";
 import { Doughnut } from 'react-chartjs-2';
 import {withRouter} from 'react-router-dom'
 import {bindActionCreators} from 'redux';
@@ -11,7 +12,7 @@ import Widget5 from './widgets/Widget5';
 import Widget6 from './widgets/Widget6';
 import Widget7 from './widgets/Widget7';
 import Widget8 from './widgets/Widget8';
-import Carousel from './widgets/Carousel.js';
+import Carousel from './widgets/Carousel';
 import Widget9 from './widgets/Widget9';
 import AdminComponent from './widgets/AdminComponent'
 import withReducer from 'app/store/withReducer';
@@ -87,6 +88,16 @@ selectUnit=(e,unit,index)=>{
 
     render()
     {
+
+      const settings = {
+        dots: true,
+        infinite:false,
+        arrows:true,
+        speed: 500,
+        autoplay:true,
+        slidesToShow: 3,
+        slidesToScroll: 1
+      };
         const {widgets,adminData,campaignData,sellerData} = this.props;
         const { selectedUnit } = this.state;
         console.log(this.state.selectedUnit,'general')
@@ -95,6 +106,8 @@ selectUnit=(e,unit,index)=>{
         let seniorData = seniorManagerData && seniorManagerData.smData && seniorManagerData.smData.sData;
         let managerData = generalManagerData && generalManagerData.mData && generalManagerData.mData.MData;
         let teamData = generalManagerData && generalManagerData.tlData && generalManagerData.tlData.tData
+
+        console.log(generalData && generalData.length,'len')
 
 
         if(selectedUnit == 'Business'){
@@ -1923,9 +1936,10 @@ selectUnit=(e,unit,index)=>{
                         }
                         </div>
 
-                
+
 
                           <div className="flex flex-col sm:flex sm:flex-row pb-32">
+                                   <Slider {...settings}>
                             {
                               generalData && generalData.map((data,index)=> {
                                 return(
@@ -1937,7 +1951,10 @@ selectUnit=(e,unit,index)=>{
                             )
                             }
 
+  </Slider>
                             </div>
+
+
 
                             <FuseAnimate delay={600}>
                                 <Typography className="p-16 pb-8 text-18 font-300">
