@@ -26,7 +26,6 @@ class GeneralManager extends Component {
     {
         const {classes, mainThemeDark, data, theme} = this.props;
 
-
         return (
 
           <Paper className="w-full rounded-8 shadow-none border-1">

@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
+import GeneralManager from './generalManager';
+import SeniorManager from './seniorManagers';
+import Manager from './managers';
+import TeamLeader from './TeamLeaders';
 
 
 export default class SimpleSlider extends Component {
   render() {
+    let Data = null
     const settings = {
       dots: true,
       infinite: false,
@@ -11,28 +16,42 @@ export default class SimpleSlider extends Component {
       slidesToShow: 3,
       slidesToScroll: 1
     };
+    if(this.props.type=='generalManager'){
+       Data = (
+         <Slider {...settings}>
+           {Object.keys(this.props.data).map(val=><GeneralManager data={this.props.data[val]}/>)}
+       </Slider>
+     )
+    }
+
+    if(this.props.type=='seniorManager'){
+       Data = (
+         <Slider {...settings}>
+           {Object.keys(this.props.data).map(val=><SeniorManager widget={this.props.data[val]}/>)}
+       </Slider>
+     )
+    }
+
+    if(this.props.type=='Manager'){
+       Data = (
+         <Slider {...settings}>
+           {Object.keys(this.props.data).map(val=><Manager data={this.props.data[val]}/>)}
+       </Slider>
+     )
+    }
+
+    if(this.props.type=='TeamLeader'){
+       Data = (
+         <Slider {...settings}>
+           {Object.keys(this.props.data).map(val=><TeamLeader data={this.props.data[val]}/>)}
+       </Slider>
+     )
+    }
+//console.log(this.props.data,'gen')
     return (
       <div>
-        <Slider {...settings}>
-          <div>
-            <h3>1</h3>
-          </div>
-          <div>
-            <h3>2</h3>
-          </div>
-          <div>
-            <h3>3</h3>
-          </div>
-          <div>
-            <h3>4</h3>
-          </div>
-          <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
-          </div>
-        </Slider>
+
+        {Data}
       </div>
     );
   }

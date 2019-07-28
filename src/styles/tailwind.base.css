@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 
+.slick-slider {
+  margin:0 -10px;
+}
+.slick-slide {
+  padding:10px;
+}
+
+.ps__thumb-x{display: none}
 
 .listValue{
     min-width: 30px;

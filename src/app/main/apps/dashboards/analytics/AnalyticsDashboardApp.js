@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react';
 import {Typography} from '@material-ui/core';
+import axios from 'axios';
 import classNames from 'classnames';
 import {FuseAnimate} from '@fuse';
 import {connect} from 'react-redux';
@@ -84,6 +85,7 @@ selectUnit=(e,unit,index)=>{
     componentDidMount()
     {
         this.props.getWidgets();
+        axios.get("/v1.0/meetings/staff/staffId123?fromDate=02/Jul/2019&toDate=27/Jul/2019").then(res => console.log(res,'res'))
     }
 
     render()
@@ -107,7 +109,7 @@ selectUnit=(e,unit,index)=>{
         let managerData = generalManagerData && generalManagerData.mData && generalManagerData.mData.MData;
         let teamData = generalManagerData && generalManagerData.tlData && generalManagerData.tlData.tData
 
-        console.log(generalData && generalData.length,'len')
+        console.log(teamData && teamData.length,'len')
 
 
         if(selectedUnit == 'Business'){
@@ -1936,44 +1938,16 @@ selectUnit=(e,unit,index)=>{
                         }
                         </div>
 
-
-
-                          <div className="flex flex-col sm:flex sm:flex-row pb-32">
-                                   <Slider {...settings}>
-                            {
-                              generalData && generalData.map((data,index)=> {
-                                return(
-                                  <div key={index} className="flex p-16">
-                                  <GeneralManager data={data}/>
-                                  </div>
-                                )
-                              }
-                            )
-                            }
-
-  </Slider>
-                            </div>
-
-
+                         <Carousel type="generalManager" data={generalData && generalData}/>
 
                             <FuseAnimate delay={600}>
                                 <Typography className="p-16 pb-8 text-18 font-300">
                                     Senior Manager
                                 </Typography>
                             </FuseAnimate>
-                              <div className="flex flex-col sm:flex sm:flex-row pb-32">
-                                {
-                                  seniorData && seniorData.map((data,index)=> {
-                                    return(
-                                      <div key={index} className="flex p-16">
-                                      <SeniorManager widget={data}/>
-                                      </div>
-                                    )
-                                  }
-                                )
-                                }
 
-                                </div>
+                            <Carousel  type="seniorManager" data ={seniorData && seniorData}/>
+
 
 
                                 <FuseAnimate delay={600}>
@@ -1981,39 +1955,16 @@ selectUnit=(e,unit,index)=>{
                                         Manager
                                     </Typography>
                                 </FuseAnimate>
-                                  <div className="flex flex-col sm:flex sm:flex-row pb-32">
-                                    {
-                                      managerData && managerData.map((data,index)=> {
-                                        return(
-                                          <div key={index} className="flex p-16">
-                                          <Manager data={data}/>
-                                          </div>
-                                        )
-                                      }
-                                    )
-                                    }
 
-                                    </div>
-
+                                <Carousel  type="Manager" data ={managerData && managerData}/>
 
                                     <FuseAnimate delay={600}>
                                         <Typography className="p-16 pb-8 text-18 font-300">
                                         Team Leader
                                         </Typography>
                                     </FuseAnimate>
-                                    <div className="flex flex-col sm:flex sm:flex-row pb-32">
-                                      {
-                                        teamData && teamData.map((data,index)=> {
-                                          return(
-                                            <div key={index} className="flex p-16">
-                                            <TeamLeader data={data}/>
-                                            </div>
-                                          )
-                                        }
-                                      )
-                                      }
 
-                                      </div>
+                                  <Carousel  type="TeamLeader" data ={teamData && teamData}/>
 
                             {/* <FuseAnimate delay={600}>
                                 <Typography className="px-16 pb-8 text-18 font-300">

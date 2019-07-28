@@ -669,7 +669,8 @@ const analyticsDashboardAppDB = {
 
           }]
         }
-      },{
+      },
+      {
         data:{
           type:'line',
           title:'Manager3',
@@ -698,6 +699,43 @@ const analyticsDashboardAppDB = {
           datasets:[{
             label          : 'Created',
                                     data           : [6, 3, 7, 5, 5, 4, 7],
+                                    fill           : true,
+                                    backgroundColor: '#42BFF7',
+                                    pointRadius    : 0,
+                                    pointHitRadius : 20,
+                                    borderWidth    : 0
+          }]
+        }
+      },
+      {
+        data:{
+          type:'line',
+          title:'Manager4',
+          options: {
+                              legend             : {
+                                  display: false
+                              },
+                              maintainAspectRatio: false,
+                              scales             : {
+                                  xAxes: [
+                                      {
+                                          display: false
+                                      }
+                                  ],
+                                  yAxes: [
+                                      {
+                                          display: false
+                                      }
+                                  ]
+                              }
+                          },
+          legend  : {
+              display: false
+          },
+          labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL'],
+          datasets:[{
+            label          : 'Created',
+                                    data           : [6, 3, 10, 5, 5, 4, 7],
                                     fill           : true,
                                     backgroundColor: '#42BFF7',
                                     pointRadius    : 0,
@@ -901,11 +939,76 @@ const analyticsDashboardAppDB = {
                     }
                 }
             },
-      }
+      },
+      {
+      'title'     : 'Senior Manager4',
+      'ranges'    : {
+          'D': 'Duration',
+      },
+      'mainChart' : {
+          'D'     : {
+              labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+              datasets: [
+                  {
+                      type                : 'bar',
+                      label               : 'Hours',
+                      data                : [37, 22, 39, 27, 18, 24, 20],
+                      backgroundColor     : '#42BFF7',
+                      hoverBackgroundColor: '#87cdf7'
+                  },
+                  {
+                      type                : 'bar',
+                      label               : 'Hours',
+                      data                : [9, 12, 9, 12, 7, 8, 16],
+                      backgroundColor     : '#c6ecfd',
+                      hoverBackgroundColor: '#d7effd'
+                  }
+              ]
+          },
+          'options': {
+              responsive         : true,
+              maintainAspectRatio: false,
+              legend             : {
+                  display: false
+              },
+              tooltips           : {
+                  mode: 'label'
+              },
+              scales             : {
+                  xAxes: [
+                      {
+                          stacked           : true,
+                          display           : true,
+                          gridLines         : {
+                              display: false
+                          },
+                          labels            : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                          categoryPercentage: 1
+                      }
+                  ],
+                  yAxes: [
+                      {
+                          stacked  : true,
+                          type     : 'linear',
+                          display  : true,
+                          position : 'left',
+                          gridLines: {
+                              display: false
+                          },
+                          labels   : {
+                              show: true
+                          }
+                      }
+                  ]
+              }
+          }
+      },
+}
       ]
         },
         tlData:{
-          tData:[{
+          tData:[
+            {
           data:{
               title:'Team Leader1',
             legend             : {
@@ -924,7 +1027,8 @@ const analyticsDashboardAppDB = {
       data: [65, 59, 80, 81, 56, 55, 40]
     }]
           }
-        },{
+        },
+        {
         data:{
 
             title:'Team Leader2',
@@ -944,7 +1048,8 @@ const analyticsDashboardAppDB = {
       data: [65, 59, 80, 56, 55, 40,80]
     }]
         }
-      },{
+      },
+      {
         data:{
           title:'Team Leader3',
           legend             : {
@@ -962,8 +1067,29 @@ const analyticsDashboardAppDB = {
       backgroundColor: '#42BFF7',
       data: [65, 59, 80, 81, 56, 40,55]
     }]
-        }
-      }
+  },
+},
+{
+  data:{
+    title:'Team Leader4',
+    legend             : {
+        display: false
+    },
+    options: {
+                        legend             : {
+                            display: false
+                        },
+                        maintainAspectRatio: false,
+                    },
+    labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL'],
+    datasets:[ {
+  label: 'My First dataset',
+  backgroundColor: '#42BFF7',
+  data: [65, 59, 30, 81, 56, 40,55]
+  }]
+  }
+}
+
       ]
         },
         gmData:{
