@@ -33,15 +33,17 @@ class AnalyticsDashboardApp extends PureComponent {
       selectedUnit:null,
       isDuration:false,
       listClass:null,
+      showDailyCalendar:null,
+      showWeeklyCalendar:null,
       defaultClass:'buttonDefault',
       btnsArray:[{id:0,name:'Units'},{id:1,name:'Duration'}],
-      duration:[{id:0,unit:'Weekly'},{id:1,unit:'Monthly'},{id:2,unit:'Quarterly'},{id:3,unit:'Yearly'}],
+      duration:[{id:0,unit:'Daily'},{id:1,unit:'Weekly'}],
       data:[{id:0,unit:'Business'},{id:1,unit:'Consumer'},{id:2,unit:'Integrated Technology'},{id:3,unit:'Human Resources'}]
     }
   }
 
   handleTabs=(btn)=>{
-  console.log(btn,'btn')
+  //console.log(btn,'btn')
   this.setState({defaultClass:btn.id});
   if(btn.name == 'Units'){
     if(this.state.isDuration==true){
@@ -69,8 +71,16 @@ class AnalyticsDashboardApp extends PureComponent {
 
   }
 
+  selectDate=(e)=>{
+    this.props.getData(e.target.value)
+    console.log(e.target.value,'date')
+  }
+
 selectUnit=(e,unit,index)=>{
-  // console.log(unit,'unit')
+   console.log(e.target.innerHTML,'unit')
+   if(e.target.innerHTML=='Daily'){
+     this.setState({showDailyCalendar:true})
+   }
   // console.log(index,'index')
   if(unit.id == index){
     this.setState({listClass:unit.id});
@@ -82,10 +92,9 @@ selectUnit=(e,unit,index)=>{
   this.setState({selectedUnit:e.target.innerHTML})
 }
 
-    componentDidMount()
-    {
+    componentDidMount()  {
         this.props.getWidgets();
-        axios.get("/v1.0/meetings/staff/staffId123?fromDate=02/Jul/2019&toDate=27/Jul/2019").then(res => console.log(res,'res'))
+        //axios.get("/v1.0/meetings/staff/staffId123?fromDate=02/Jul/2019&toDate=27/Jul/2019").then(res => console.log(res,'res'))
     }
 
     render()
@@ -109,7 +118,7 @@ selectUnit=(e,unit,index)=>{
         let managerData = generalManagerData && generalManagerData.mData && generalManagerData.mData.MData;
         let teamData = generalManagerData && generalManagerData.tlData && generalManagerData.tlData.tData
 
-        console.log(teamData && teamData.length,'len')
+        //console.log(teamData && teamData.length,'len')
 
 
         if(selectedUnit == 'Business'){
@@ -1937,7 +1946,13 @@ selectUnit=(e,unit,index)=>{
                           }) : ''
                         }
                         </div>
-
+                        {
+                          this.state.showDailyCalendar ?
+                          <>
+                          <label>From Date</label>
+                          <input type="date" onChange={(e)=>this.selectDate(e)}/>
+                          </>:""
+                        }
                          <Carousel type="generalManager" data={generalData && generalData}/>
 
                             <FuseAnimate delay={600}>
@@ -2035,12 +2050,14 @@ selectUnit=(e,unit,index)=>{
 function mapDispatchToProps(dispatch)
 {
     return bindActionCreators({
-        getWidgets: Actions.getWidgets
+        getWidgets: Actions.getWidgets,
+        getData: Actions.getData
     }, dispatch);
 }
 
 function mapStateToProps({analyticsDashboardApp})
 {
+  console.log(analyticsDashboardApp,'analyticsDashboardApp')
     return {
         widgets: analyticsDashboardApp.widgets.data,
         generalManagerData: analyticsDashboardApp.widgets.data,

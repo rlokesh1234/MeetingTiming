@@ -1,8 +1,10 @@
 import * as Actions from '../actions';
+//console.log(Actions,'act')
 //import staff from '../../../../../../../../public/assets/images/admin/staff'
 
 const initialState = {
     data: null,
+    newData:null,
     adminData:[
         {"Name":"Shops Statistic","img":"assets/images/admin/staff.png","data":[{"field":"Total","value":20,"class":"danger"},{"field":"Featured","value":4,"class":"success"},{"field":"Actived","value":9,"class":"success"},{"field":"InActived","value":11,"class":"warning"},{"field":"Verified","value":13,"class":"success"},{"field":"Unverified","value":7,"class":"warning"}]},
         {"Name":"Users Statistic","img":"assets/images/admin/staff.png","data":[{"field":"Total","value":41,"class":"danger"},{"field":"Actived","value":41,"class":"success"},{"field":"InActived","value":0,"class":"warning"}]},
@@ -26,6 +28,15 @@ const widgetsReducer = function (state = initialState, action) {
                 ...state,
                 data: {...action.payload}
             };
+
+          case Actions.GET_DATA:
+          return{
+            ...state,
+            newData:{
+              ...action.payload
+            }
+
+          }
         default:
             return state;
     }
