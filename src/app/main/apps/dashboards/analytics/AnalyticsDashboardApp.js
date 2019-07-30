@@ -19,6 +19,7 @@ import AdminComponent from './widgets/AdminComponent'
 import withReducer from 'app/store/withReducer';
 import * as Actions from './store/actions'
 import reducer from './store/reducers';
+import DurationComponent from './widgets/DurationComponent'
 import GeneralManager from './widgets/generalManager';
 import SeniorManager from './widgets/seniorManagers';
 import TeamLeader from './widgets/TeamLeaders';
@@ -32,8 +33,11 @@ class AnalyticsDashboardApp extends PureComponent {
       isClicked:false,
       selectedUnit:null,
       isDuration:false,
+      currentState:'units',
       listClass:null,
       showDailyCalendar:null,
+      fromDate:null,
+      toDate:null,
       showWeeklyCalendar:null,
       defaultClass:'buttonDefault',
       btnsArray:[{id:0,name:'Units'},{id:1,name:'Duration'}],
@@ -46,6 +50,7 @@ class AnalyticsDashboardApp extends PureComponent {
   //console.log(btn,'btn')
   this.setState({defaultClass:btn.id});
   if(btn.name == 'Units'){
+      this.setState({currentState:'units'});
     if(this.state.isDuration==true){
       this.setState({isDuration:false,isClicked:true})
     }
@@ -57,6 +62,7 @@ class AnalyticsDashboardApp extends PureComponent {
     }
   }
   else{
+      this.setState({currentState:'duration'});
     if(this.state.isClicked==true){
       this.setState({isClicked:false,isDuration:true})
     }
@@ -76,10 +82,28 @@ class AnalyticsDashboardApp extends PureComponent {
     console.log(e.target.value,'date')
   }
 
+  selectWeeklyDate=(e)=>{
+    this.setState({fromDate:e.target.value})
+    if(e.target.value && this.state.toDate){
+      this.props.getWeekly(e.target.value,this.state.toDate)
+
+    }
+  }
+
+  selectWeeklyDate1=(e)=>{
+    this.setState({toDate:e.target.value})
+    if(e.target.value && this.state.fromDate){
+      this.props.getWeekly(e.target.value,this.state.fromDate)
+    }
+  }
+
 selectUnit=(e,unit,index)=>{
    console.log(e.target.innerHTML,'unit')
    if(e.target.innerHTML=='Daily'){
-     this.setState({showDailyCalendar:true})
+     this.setState({showDailyCalendar:true,showWeeklyCalendar:false})
+   }
+   else{
+       this.setState({showWeeklyCalendar:true,showDailyCalendar:false})
    }
   // console.log(index,'index')
   if(unit.id == index){
@@ -109,7 +133,7 @@ selectUnit=(e,unit,index)=>{
         slidesToShow: 3,
         slidesToScroll: 1
       };
-        const {widgets,adminData,campaignData,sellerData} = this.props;
+        const {widgets,adminData,campaignData,sellerData,newData} = this.props;
         const { selectedUnit } = this.state;
         console.log(this.state.selectedUnit,'general')
         let { generalManagerData, seniorManagerData} = this.props;
@@ -1940,7 +1964,7 @@ selectUnit=(e,unit,index)=>{
                           this.state.isDuration ? this.state.duration.map((duration,index)=>{
                             return(
 
-                              <span className={ duration.id === this.state.listClass ? 'activeDefault':'buttonDefault'}  onClick={(e)=>this.selectUnit(e,duration,index)}key={index}>{duration.unit}</span>
+                              <span className={classNames(duration.id === this.state.listClass ? 'activeDefault':'buttonDefault') }  onClick={(e)=>this.selectUnit(e,duration,index)}key={index}>{duration.unit}</span>
 
                             )
                           }) : ''
@@ -1949,10 +1973,22 @@ selectUnit=(e,unit,index)=>{
                         {
                           this.state.showDailyCalendar ?
                           <>
-                          <label>From Date</label>
-                          <input type="date" onChange={(e)=>this.selectDate(e)}/>
+                          <input type="date" className="w-1/4 p-12 my-20" onChange={(e)=>this.selectDate(e)}/>
                           </>:""
                         }
+                        {
+                          this.state.showWeeklyCalendar ?
+                          <div>
+
+                          <input type="date" className="w-1/4 p-12 my-20" onChange={(e)=>this.selectWeeklyDate(e)}/>
+
+                          <input type="date" className="ml-8 w-1/4 p-12 my-20" onChange={(e)=>this.selectWeeklyDate1(e)}/>
+                          </div>:""
+                        }
+                        {
+                            this.state.currentState == 'units' ? 
+                            <>
+
                          <Carousel type="generalManager" data={generalData && generalData}/>
 
                             <FuseAnimate delay={600}>
@@ -1980,65 +2016,12 @@ selectUnit=(e,unit,index)=>{
                                     </FuseAnimate>
 
                                   <Carousel  type="TeamLeader" data ={teamData && teamData}/>
+                                  </>:<>
+                                  <DurationComponent newData={newData && newData} staffId={newData && newData.StaffMeeting && newData.StaffMeeting.staffId}/>
+                                  </>
+                        }
 
-                            {/* <FuseAnimate delay={600}>
-                                <Typography className="px-16 pb-8 text-18 font-300">
-                                    Gross Revenues
-                                </Typography>
-                            </FuseAnimate>
-
-                            <div className="widget w-full p-16 pb-32">
-                                <Widget5 data={widgets.widget5}/>
-                            </div>
-
-                            <FuseAnimate delay={600}>
-                                <Typography className="px-16 pb-8 text-18 font-300">
-                                Latest Request Payout of Seller
-                                </Typography>
-                            </FuseAnimate>
-
-                            <div className="widget w-full p-16 pb-32">
-                                <Widget6 data={sellerData}/>
-                            </div> */}
-                        </div>
-
-                        <div className="flex flex-wrap w-full md:w-320 pt-16">
-
-                            {/* <div className="mb-32 w-full sm:w-1/2 md:w-full">
-                                <FuseAnimate delay={600}>
-                                    <Typography className="px-16 pb-8 text-18 font-300">
-                                        What are your top devices?
-                                    </Typography>
-                                </FuseAnimate>
-
-                                <div className="widget w-full p-16">
-                                    <Widget7 data={widgets.widget7}/>
-                                </div>
-                            </div> */}
-
-                            {/* <div className="mb-32 w-full sm:w-1/2 md:w-full">
-
-                                <FuseAnimate delay={600}>
-                                    <div className="px-16 pb-8 text-18 font-300">
-                                        How are your sales?
-                                    </div>
-                                </FuseAnimate>
-
-                                <div className="widget w-full p-16">
-                                    <Widget8 data={widgets.widget8}/>
-                                </div>
-                            </div> */}
-
-                            {/* <div className="mb-32 w-full sm:w-1/2 md:w-full">
-                                <FuseAnimate delay={600}>
-                                    <Typography className="px-16 pb-8 text-18 font-300 lg:pt-0">
-                                        What are your top campaigns sectors?
-                                    </Typography>
-                                </FuseAnimate>
-                                <div className="widget w-full p-16">
-                                    <Widget9 data={campaignData}/>
-                                </div>
-                            </div> */}
+                           
                         </div>
                     </div>
                 </FuseAnimate>
@@ -2051,15 +2034,17 @@ function mapDispatchToProps(dispatch)
 {
     return bindActionCreators({
         getWidgets: Actions.getWidgets,
-        getData: Actions.getData
+        getData: Actions.getData,
+        getWeekly: Actions.getWeekly
     }, dispatch);
 }
 
 function mapStateToProps({analyticsDashboardApp})
 {
-  console.log(analyticsDashboardApp,'analyticsDashboardApp')
+  //console.log(analyticsDashboardApp,'analyticsDashboardApp')
     return {
         widgets: analyticsDashboardApp.widgets.data,
+        newData: analyticsDashboardApp.widgets.newData,
         generalManagerData: analyticsDashboardApp.widgets.data,
         seniorManagerData: analyticsDashboardApp.widgets.data,
         adminData:analyticsDashboardApp.widgets.adminData,

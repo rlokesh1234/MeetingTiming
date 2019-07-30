@@ -21,6 +21,7 @@ const initialState = {
 };
 
 const widgetsReducer = function (state = initialState, action) {
+  console.log(action)
     switch ( action.type )
     {
         case Actions.GET_WIDGETS:
@@ -29,13 +30,23 @@ const widgetsReducer = function (state = initialState, action) {
                 data: {...action.payload}
             };
 
-          case Actions.GET_DATA:
+          case "GET_DATA":
+          console.log(action.payload,'action')
           return{
             ...state,
             newData:{
               ...action.payload
             }
 
+          }
+
+          case "GET_Weekly":
+          console.log(action.payload,'payload')
+          return{
+            ...state,
+            newData:{
+              ...action.payload
+            }
           }
         default:
             return state;
