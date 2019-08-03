@@ -47,7 +47,7 @@ export default class SimpleSlider extends Component {
        </Slider>
      )
     }
-//console.log(this.props.data,'gen')
+
     return (
       <div>
 

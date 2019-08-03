@@ -1095,37 +1095,30 @@ const analyticsDashboardAppDB = {
         gmData:{
           gData:[
             {
-            data:{
+                StaffMeeting:{
               type:'doughnut',
-              title:'General Manager1',
+              staffId:'sid2',
               options:{
                 legend             : {
-                    display: false
+                    display: true,
+                    position: 'bottom'
                 },
                 animation:{
                   animateScale:true
                 }
               },
-              labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
+              labels:['Working Hours','Meeting Hours'],
               datasets:[{
-                data:[10,20,5,30,15,2,8,25,0],
-                backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black'],
-                hoverBackgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
+                data:[5,3],
+                backgroundColor:['blue','red'],
+                hoverBackgroundColor:['blue','red']
               }]
             }
           },
           {
-            data:{
+            StaffMeeting:{
               type:'doughnut',
-              title:'General Manager2',
-              options:{
-                legend             : {
-                    display: false
-                },
-                animation:{
-                  animateScale:true
-                }
-              },
+              staffId:'General Manager2',
               labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
               datasets:[{
                 data:[50,20,50,30,15,20,80,25,5],
@@ -1135,9 +1128,9 @@ const analyticsDashboardAppDB = {
           }
         },
         {
-          data:{
+            StaffMeeting:{
             type:'doughnut',
-            title:'General Manager3',
+            staffId:'General Manager3',
             options:{
               legend             : {
                   display: false
@@ -1155,9 +1148,9 @@ const analyticsDashboardAppDB = {
         }
       },
       {
-        data:{
+        StaffMeeting:{
           type:'doughnut',
-          title:'General Manager4',
+          staffId:'General Manager4',
           options:{
             legend             : {
                 display: false

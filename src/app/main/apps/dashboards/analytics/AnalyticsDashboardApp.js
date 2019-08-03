@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import {Typography} from '@material-ui/core';
+import {Typography,Select} from '@material-ui/core';
 import axios from 'axios';
 import classNames from 'classnames';
 import {FuseAnimate} from '@fuse';
@@ -40,9 +40,9 @@ class AnalyticsDashboardApp extends PureComponent {
       toDate:null,
       showWeeklyCalendar:null,
       defaultClass:'buttonDefault',
-      btnsArray:[{id:0,name:'Units'},{id:1,name:'Duration'}],
+      btnsArray:[{id:0,name:'Units'}],
       duration:[{id:0,unit:'Daily'},{id:1,unit:'Weekly'}],
-      data:[{id:0,unit:'Business'},{id:1,unit:'Consumer'},{id:2,unit:'Integrated Technology'},{id:3,unit:'Human Resources'}]
+      data:[{id:0,unit:'Units'},{id:1,unit:'Business'},{id:2,unit:'Consumer'},{id:3,unit:'Integrated Technology'},{id:4,unit:'Human Resources'}]
     }
   }
 
@@ -121,6 +121,10 @@ selectUnit=(e,unit,index)=>{
         //axios.get("/v1.0/meetings/staff/staffId123?fromDate=02/Jul/2019&toDate=27/Jul/2019").then(res => console.log(res,'res'))
     }
 
+    handleSelect=(event)=>{
+      this.setState({selectedUnit:event.target.value})
+      //console.log(event.target.value,'event')
+    }
     render()
     {
 
@@ -148,9 +152,9 @@ selectUnit=(e,unit,index)=>{
         if(selectedUnit == 'Business'){
            generalData=[
              {
-               data:{
+              StaffMeeting:{
                type:'doughnut',
-               title:'General Manager1',
+               staffId:'General Manager1',
                options:{
                  legend             : {
                      display: false
@@ -168,9 +172,9 @@ selectUnit=(e,unit,index)=>{
              }
              },
              {
-           data:{
+              StaffMeeting:{
              type:'doughnut',
-             title:'General Manager1',
+             staffId:'General Manager1',
              options:{
                legend             : {
                    display: false
@@ -188,9 +192,9 @@ selectUnit=(e,unit,index)=>{
            }
          },
              {
-         data:{
+              StaffMeeting:{
            type:'doughnut',
-           title:'General Manager1',
+           staffId:'General Manager1',
            options:{
              legend             : {
                  display: false
@@ -1935,29 +1939,18 @@ selectUnit=(e,unit,index)=>{
                             <Typography className="p-16 pb-8 text-18 font-300">
                                 General Manager
                             </Typography>
-                            <div className="items-center">
-                            {
-                              this.state.btnsArray.map((btn,index)=>{
-                                return (
-                                  <button className={ classNames('px-16'),btn.id === this.state.defaultClass ? 'activeDefault':'buttonDefault' }  tabindex="0" type="button">
-                                    <span className="MuiButton-label mx-6 buttonSpacing" onClick={()=>this.handleTabs(btn)}>{btn.name}</span>
-                                  </button>
-                                )
-                              })
-                            }
-                            </div>
-                            </div>
-                        </FuseAnimate>
-                        <div>
+                            <div className="">
+                          
                         {
-                          this.state.isClicked ? this.state.data.map((unit,index)=>{
-                            return(
-                              <span className={ unit.id === this.state.listClass ? 'activeDefault':'buttonDefault' } key={index} onClick={(e)=>this.selectUnit(e,unit,index)}>{unit.unit}</span>
-                            )
-
-                          }) : ''
+                          <select onChange={(event)=>this.handleSelect(event)}>{this.state.data.map((unit,index)=> <option value={unit.unit}>{unit.unit}</option>
+                          )}
+                          </select> 
                         }
+                       
                         </div>
+                        </div>
+                        </FuseAnimate>
+                        
 
                         <div>
                         {
@@ -1985,10 +1978,8 @@ selectUnit=(e,unit,index)=>{
                           <input type="date" className="ml-8 w-1/4 p-12 my-20" onChange={(e)=>this.selectWeeklyDate1(e)}/>
                           </div>:""
                         }
-                        {
-                            this.state.currentState == 'units' ? 
-                            <>
-
+                        
+                            
                          <Carousel type="generalManager" data={generalData && generalData}/>
 
                             <FuseAnimate delay={600}>
@@ -2016,10 +2007,8 @@ selectUnit=(e,unit,index)=>{
                                     </FuseAnimate>
 
                                   <Carousel  type="TeamLeader" data ={teamData && teamData}/>
-                                  </>:<>
-                                  <DurationComponent newData={newData && newData} staffId={newData && newData.StaffMeeting && newData.StaffMeeting.staffId}/>
-                                  </>
-                        }
+                                 
+                        
 
                            
                         </div>

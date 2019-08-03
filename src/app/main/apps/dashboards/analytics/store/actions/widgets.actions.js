@@ -18,10 +18,10 @@ export function getWidgets()
 }
 
 
-export function getData(date){
+export function getData(date,month){
 
 
-  let reqDate = moment(date).format('DD/MMM/YYYY')
+  let reqDate = date + '/' + month + '/' + 2019
 
    const request = axios.get('http://part.dynu.net:8387/v1.0/meetings/staff/sid2?fromDate='+reqDate,{dataType:'json',contentTye:'application/json'});
    return (dispatch)=>request.then((response)=>
