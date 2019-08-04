@@ -217,31 +217,9 @@ selectUnit=(e,unit,index)=>{
           console.log("inide",seniorData);
           seniorData=[
             {
-            'title'     : 'Senior Manager1',
-            'ranges'    : {
-                'D': 'Duration',
-            },
-            'mainChart' : {
-                'D'     : {
-                    labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                    datasets: [
-                        {
-                            type                : 'bar',
-                            label               : 'Hours',
-                            data                : [9, 12, 9, 12, 7, 8, 16],
-                            backgroundColor     : '#42BFF7',
-                            hoverBackgroundColor: '#87cdf7'
-                        },
-                        {
-                            type                : 'bar',
-                            label               : 'Hours',
-                            data                : [37, 32, 39, 27, 18, 24, 20],
-                            backgroundColor     : '#c6ecfd',
-                            hoverBackgroundColor: '#d7effd'
-                        }
-                    ]
-                },
-                'options': {
+              StaffMeeting:{
+                staffId:'Senior Manager',
+                options: {
                     responsive         : true,
                     maintainAspectRatio: false,
                     legend             : {
@@ -277,136 +255,150 @@ selectUnit=(e,unit,index)=>{
                             }
                         ]
                     }
-                }
-            },
-      },
-            {
-      'title'     : 'Senior Manager1',
-      'ranges'    : {
-          'D': 'Duration',
-      },
-      'mainChart' : {
-          'D'     : {
-              labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-              datasets: [
-                  {
-                      type                : 'bar',
-                      label               : 'Hours',
-                      data                : [25, 12, 9, 12, 7, 8, 50],
-                      backgroundColor     : '#42BFF7',
-                      hoverBackgroundColor: '#87cdf7'
-                  },
-                  {
-                      type                : 'bar',
-                      label               : 'Hours',
-                      data                : [37, 50, 39, 27, 18, 24, 40],
-                      backgroundColor     : '#c6ecfd',
-                      hoverBackgroundColor: '#d7effd'
-                  }
-              ]
-          },
-          'options': {
-              responsive         : true,
-              maintainAspectRatio: false,
-              legend             : {
-                  display: false
-              },
-              tooltips           : {
-                  mode: 'label'
-              },
-              scales             : {
-                  xAxes: [
-                      {
-                          stacked           : true,
-                          display           : true,
-                          gridLines         : {
-                              display: false
-                          },
-                          labels            : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                          categoryPercentage: 1
-                      }
-                  ],
-                  yAxes: [
-                      {
-                          stacked  : true,
-                          type     : 'linear',
-                          display  : true,
-                          position : 'left',
-                          gridLines: {
-                              display: false
-                          },
-                          labels   : {
-                              show: true
-                          }
-                      }
-                  ]
-              }
-          }
-      },
-     },
-            {
-     'title'     : 'Senior Manager1',
-     'ranges'    : {
-     'D': 'Duration',
-     },
-     'mainChart' : {
-     'D'     : {
-        labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [
-            {
-                type                : 'bar',
-                label               : 'Hours',
-                data                : [50, 12, 9, 12, 30, 8, 40],
-                backgroundColor     : '#42BFF7',
-                hoverBackgroundColor: '#87cdf7'
-            },
-            {
-                type                : 'bar',
-                label               : 'Hours',
-                data                : [7, 50, 39, 27, 18, 24, 50],
-                backgroundColor     : '#c6ecfd',
-                hoverBackgroundColor: '#d7effd'
-            }
-        ]
-     },
-     'options': {
-        responsive         : true,
-        maintainAspectRatio: false,
-        legend             : {
-            display: false
-        },
-        tooltips           : {
-            mode: 'label'
-        },
-        scales             : {
-            xAxes: [
-                {
-                    stacked           : true,
-                    display           : true,
-                    gridLines         : {
-                        display: false
+                },
+                labels:['Working Hours','Meeting Hours'],
+                 meetingHours:5,
+                 workingHours:3,
+                 datasets: [
+                    {
+                        type                : 'bar',
+                        label               : 'Hours',
+                        data                : [37, 32,22,12,18],
+                        backgroundColor     : '#42BFF7',
+                        hoverBackgroundColor: '#87cdf7'
                     },
-                    labels            : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                    categoryPercentage: 1
-                }
-            ],
-            yAxes: [
-                {
-                    stacked  : true,
-                    type     : 'linear',
-                    display  : true,
-                    position : 'left',
-                    gridLines: {
-                        display: false
-                    },
-                    labels   : {
-                        show: true
+                    {
+                        type                : 'bar',
+                        label               : 'Hours',
+                        data                : [9, 12,10,5,10],
+                        backgroundColor     : '#c6ecfd',
+                        hoverBackgroundColor: '#d7effd'
                     }
-                }
-            ]
-        }
-     }
+                ]
+            },
+      },
+            {
+              StaffMeeting:{
+                staffId:'Senior Manager',
+                options: {
+                    responsive         : true,
+                    maintainAspectRatio: false,
+                    legend             : {
+                        display: false
+                    },
+                    tooltips           : {
+                        mode: 'label'
+                    },
+                    scales             : {
+                        xAxes: [
+                            {
+                                stacked           : true,
+                                display           : true,
+                                gridLines         : {
+                                    display: false
+                                },
+                                labels            : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                                categoryPercentage: 1
+                            }
+                        ],
+                        yAxes: [
+                            {
+                                stacked  : true,
+                                type     : 'linear',
+                                display  : true,
+                                position : 'left',
+                                gridLines: {
+                                    display: false
+                                },
+                                labels   : {
+                                    show: true
+                                }
+                            }
+                        ]
+                    }
+                },
+                labels:['Working Hours','Meeting Hours'],
+                 meetingHours:5,
+                 workingHours:3,
+                 datasets: [
+                    {
+                        type                : 'bar',
+                        label               : 'Hours',
+                        data                : [37, 32],
+                        backgroundColor     : '#42BFF7',
+                        hoverBackgroundColor: '#87cdf7'
+                    },
+                    {
+                        type                : 'bar',
+                        label               : 'Hours',
+                        data                : [9, 12],
+                        backgroundColor     : '#c6ecfd',
+                        hoverBackgroundColor: '#d7effd'
+                    }
+                ]
+            },
      },
+            {
+              StaffMeeting:{
+                staffId:'Senior Manager',
+                options: {
+                    responsive         : true,
+                    maintainAspectRatio: false,
+                    legend             : {
+                        display: false
+                    },
+                    tooltips           : {
+                        mode: 'label'
+                    },
+                    scales             : {
+                        xAxes: [
+                            {
+                                stacked           : true,
+                                display           : true,
+                                gridLines         : {
+                                    display: false
+                                },
+                                labels            : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                                categoryPercentage: 1
+                            }
+                        ],
+                        yAxes: [
+                            {
+                                stacked  : true,
+                                type     : 'linear',
+                                display  : true,
+                                position : 'left',
+                                gridLines: {
+                                    display: false
+                                },
+                                labels   : {
+                                    show: true
+                                }
+                            }
+                        ]
+                    }
+                },
+                labels:['Working Hours','Meeting Hours'],
+                 meetingHours:5,
+                 workingHours:3,
+                 datasets: [
+                    {
+                        type                : 'bar',
+                        label               : 'Hours',
+                        data                : [37, 32,20,12,18,5],
+                        backgroundColor     : '#42BFF7',
+                        hoverBackgroundColor: '#87cdf7'
+                    },
+                    {
+                        type                : 'bar',
+                        label               : 'Hours',
+                        data                : [9, 12,10,3,7,0],
+                        backgroundColor     : '#c6ecfd',
+                        hoverBackgroundColor: '#d7effd'
+                    }
+                ]
+            },
+     
      },
    ];
         }
@@ -658,31 +650,9 @@ selectUnit=(e,unit,index)=>{
         console.log("inide",seniorData);
         seniorData=[
           {
-          'title'     : 'Senior Manager1',
-          'ranges'    : {
-              'D': 'Duration',
-          },
-          'mainChart' : {
-              'D'     : {
-                  labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                  datasets: [
-                      {
-                          type                : 'bar',
-                          label               : 'Hours',
-                          data                : [9, 2, 29, 12, 27, 38, 16],
-                          backgroundColor     : '#42BFF7',
-                          hoverBackgroundColor: '#87cdf7'
-                      },
-                      {
-                          type                : 'bar',
-                          label               : 'Hours',
-                          data                : [5, 0, 3, 5, 18, 24, 20],
-                          backgroundColor     : '#c6ecfd',
-                          hoverBackgroundColor: '#d7effd'
-                      }
-                  ]
-              },
-              'options': {
+            StaffMeeting:{
+              staffId:'sid2',
+              options: {
                   responsive         : true,
                   maintainAspectRatio: false,
                   legend             : {
@@ -718,137 +688,151 @@ selectUnit=(e,unit,index)=>{
                           }
                       ]
                   }
-              }
+              },
+              labels:['Working Hours','Meeting Hours'],
+               meetingHours:5,
+               workingHours:3,
+               datasets: [
+                  {
+                      type                : 'bar',
+                      label               : 'Hours',
+                      data                : [37, 32],
+                      backgroundColor     : '#42BFF7',
+                      hoverBackgroundColor: '#87cdf7'
+                  },
+                  {
+                      type                : 'bar',
+                      label               : 'Hours',
+                      data                : [9, 12],
+                      backgroundColor     : '#c6ecfd',
+                      hoverBackgroundColor: '#d7effd'
+                  }
+              ]
           },
+          
     },
           {
-    'title'     : 'Senior Manager1',
-    'ranges'    : {
-        'D': 'Duration',
-    },
-    'mainChart' : {
-        'D'     : {
-            labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-            datasets: [
-                {
-                    type                : 'bar',
-                    label               : 'Hours',
-                    data                : [25, 12, 9, 12, 7, 8, 50],
-                    backgroundColor     : '#42BFF7',
-                    hoverBackgroundColor: '#87cdf7'
-                },
-                {
-                    type                : 'bar',
-                    label               : 'Hours',
-                    data                : [7, 0, 9, 7, 18, 4, 40],
-                    backgroundColor     : '#c6ecfd',
-                    hoverBackgroundColor: '#d7effd'
-                }
-            ]
-        },
-        'options': {
-            responsive         : true,
-            maintainAspectRatio: false,
-            legend             : {
-                display: false
-            },
-            tooltips           : {
-                mode: 'label'
-            },
-            scales             : {
-                xAxes: [
-                    {
-                        stacked           : true,
-                        display           : true,
-                        gridLines         : {
-                            display: false
-                        },
-                        labels            : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                        categoryPercentage: 1
-                    }
-                ],
-                yAxes: [
-                    {
-                        stacked  : true,
-                        type     : 'linear',
-                        display  : true,
-                        position : 'left',
-                        gridLines: {
-                            display: false
-                        },
-                        labels   : {
-                            show: true
-                        }
-                    }
-                ]
-            }
-        }
-    },
+            StaffMeeting:{
+              staffId:'Senior Manager',
+              options: {
+                  responsive         : true,
+                  maintainAspectRatio: false,
+                  legend             : {
+                      display: false
+                  },
+                  tooltips           : {
+                      mode: 'label'
+                  },
+                  scales             : {
+                      xAxes: [
+                          {
+                              stacked           : true,
+                              display           : true,
+                              gridLines         : {
+                                  display: false
+                              },
+                              labels            : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                              categoryPercentage: 1
+                          }
+                      ],
+                      yAxes: [
+                          {
+                              stacked  : true,
+                              type     : 'linear',
+                              display  : true,
+                              position : 'left',
+                              gridLines: {
+                                  display: false
+                              },
+                              labels   : {
+                                  show: true
+                              }
+                          }
+                      ]
+                  }
+              },
+              labels:['Working Hours','Meeting Hours'],
+               meetingHours:5,
+               workingHours:3,
+               datasets: [
+                  {
+                      type                : 'bar',
+                      label               : 'Hours',
+                      data                : [37, 32],
+                      backgroundColor     : '#42BFF7',
+                      hoverBackgroundColor: '#87cdf7'
+                  },
+                  {
+                      type                : 'bar',
+                      label               : 'Hours',
+                      data                : [9, 12],
+                      backgroundColor     : '#c6ecfd',
+                      hoverBackgroundColor: '#d7effd'
+                  }
+              ]
+          },
    },
-          {
-   'title'     : 'Senior Manager1',
-   'ranges'    : {
-   'D': 'Duration',
-   },
-   'mainChart' : {
-   'D'     : {
-      labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-      datasets: [
+   {
+    StaffMeeting:{
+      staffId:'Senior Manager',
+      options: {
+          responsive         : true,
+          maintainAspectRatio: false,
+          legend             : {
+              display: false
+          },
+          tooltips           : {
+              mode: 'label'
+          },
+          scales             : {
+              xAxes: [
+                  {
+                      stacked           : true,
+                      display           : true,
+                      gridLines         : {
+                          display: false
+                      },
+                      labels            : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                      categoryPercentage: 1
+                  }
+              ],
+              yAxes: [
+                  {
+                      stacked  : true,
+                      type     : 'linear',
+                      display  : true,
+                      position : 'left',
+                      gridLines: {
+                          display: false
+                      },
+                      labels   : {
+                          show: true
+                      }
+                  }
+              ]
+          }
+      },
+      labels:['Working Hours','Meeting Hours'],
+       meetingHours:5,
+       workingHours:3,
+       datasets: [
           {
               type                : 'bar',
               label               : 'Hours',
-              data                : [50, 12, 9, 37, 30, 28, 40],
+              data                : [37, 32],
               backgroundColor     : '#42BFF7',
               hoverBackgroundColor: '#87cdf7'
           },
           {
               type                : 'bar',
               label               : 'Hours',
-              data                : [7, 5, 9, 27, 18, 24, 0],
+              data                : [9, 12],
               backgroundColor     : '#c6ecfd',
               hoverBackgroundColor: '#d7effd'
           }
       ]
-   },
-   'options': {
-      responsive         : true,
-      maintainAspectRatio: false,
-      legend             : {
-          display: false
-      },
-      tooltips           : {
-          mode: 'label'
-      },
-      scales             : {
-          xAxes: [
-              {
-                  stacked           : true,
-                  display           : true,
-                  gridLines         : {
-                      display: false
-                  },
-                  labels            : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                  categoryPercentage: 1
-              }
-          ],
-          yAxes: [
-              {
-                  stacked  : true,
-                  type     : 'linear',
-                  display  : true,
-                  position : 'left',
-                  gridLines: {
-                      display: false
-                  },
-                  labels   : {
-                      show: true
-                  }
-              }
-          ]
-      }
-   }
-   },
-   },
+  },
+},
  ];
       }
 
@@ -1099,198 +1083,189 @@ selectUnit=(e,unit,index)=>{
 
        if(selectedUnit == 'Integrated Technology'){
          seniorData=[
-           {
-           'title'     : 'Senior Manager1',
-           'ranges'    : {
-               'D': 'Duration',
-           },
-           'mainChart' : {
-               'D'     : {
-                   labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                   datasets: [
-                       {
-                           type                : 'bar',
-                           label               : 'Hours',
-                           data                : [9, 2, 29, 12, 27, 38, 26],
-                           backgroundColor     : '#42BFF7',
-                           hoverBackgroundColor: '#87cdf7'
-                       },
-                       {
-                           type                : 'bar',
-                           label               : 'Hours',
-                           data                : [5, 0, 3, 5, 18, 24, 20],
-                           backgroundColor     : '#c6ecfd',
-                           hoverBackgroundColor: '#d7effd'
-                       }
-                   ]
-               },
-               'options': {
-                   responsive         : true,
-                   maintainAspectRatio: false,
-                   legend             : {
-                       display: false
-                   },
-                   tooltips           : {
-                       mode: 'label'
-                   },
-                   scales             : {
-                       xAxes: [
-                           {
-                               stacked           : true,
-                               display           : true,
-                               gridLines         : {
-                                   display: false
-                               },
-                               labels            : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                               categoryPercentage: 1
-                           }
-                       ],
-                       yAxes: [
-                           {
-                               stacked  : true,
-                               type     : 'linear',
-                               display  : true,
-                               position : 'left',
-                               gridLines: {
-                                   display: false
-                               },
-                               labels   : {
-                                   show: true
-                               }
-                           }
-                       ]
-                   }
-               }
-           },
-     },
-           {
-     'title'     : 'Senior Manager1',
-     'ranges'    : {
-         'D': 'Duration',
-     },
-     'mainChart' : {
-         'D'     : {
-             labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-             datasets: [
-                 {
-                     type                : 'bar',
-                     label               : 'Hours',
-                     data                : [25, 12, 9, 22, 7, 8, 50],
-                     backgroundColor     : '#42BFF7',
-                     hoverBackgroundColor: '#87cdf7'
-                 },
-                 {
-                     type                : 'bar',
-                     label               : 'Hours',
-                     data                : [7, 0, 9, 7, 18, 4, 40],
-                     backgroundColor     : '#c6ecfd',
-                     hoverBackgroundColor: '#d7effd'
-                 }
-             ]
-         },
-         'options': {
-             responsive         : true,
-             maintainAspectRatio: false,
-             legend             : {
-                 display: false
-             },
-             tooltips           : {
-                 mode: 'label'
-             },
-             scales             : {
-                 xAxes: [
-                     {
-                         stacked           : true,
-                         display           : true,
-                         gridLines         : {
-                             display: false
-                         },
-                         labels            : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                         categoryPercentage: 1
-                     }
-                 ],
-                 yAxes: [
-                     {
-                         stacked  : true,
-                         type     : 'linear',
-                         display  : true,
-                         position : 'left',
-                         gridLines: {
-                             display: false
-                         },
-                         labels   : {
-                             show: true
-                         }
-                     }
-                 ]
-             }
-         }
-     },
-    },
-           {
-    'title'     : 'Senior Manager1',
-    'ranges'    : {
-    'D': 'Duration',
-    },
-    'mainChart' : {
-    'D'     : {
-       labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+          {
+            StaffMeeting:{
+              staffId:'Senior Manager',
+              options: {
+                  responsive         : true,
+                  maintainAspectRatio: false,
+                  legend             : {
+                      display: false
+                  },
+                  tooltips           : {
+                      mode: 'label'
+                  },
+                  scales             : {
+                      xAxes: [
+                          {
+                              stacked           : true,
+                              display           : true,
+                              gridLines         : {
+                                  display: false
+                              },
+                              labels            : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                              categoryPercentage: 1
+                          }
+                      ],
+                      yAxes: [
+                          {
+                              stacked  : true,
+                              type     : 'linear',
+                              display  : true,
+                              position : 'left',
+                              gridLines: {
+                                  display: false
+                              },
+                              labels   : {
+                                  show: true
+                              }
+                          }
+                      ]
+                  }
+              },
+              labels:['Working Hours','Meeting Hours'],
+               meetingHours:5,
+               workingHours:3,
+               datasets: [
+                  {
+                      type                : 'bar',
+                      label               : 'Hours',
+                      data                : [37, 32],
+                      backgroundColor     : '#42BFF7',
+                      hoverBackgroundColor: '#87cdf7'
+                  },
+                  {
+                      type                : 'bar',
+                      label               : 'Hours',
+                      data                : [9, 12],
+                      backgroundColor     : '#c6ecfd',
+                      hoverBackgroundColor: '#d7effd'
+                  }
+              ]
+          },
+   },
+   {
+    StaffMeeting:{
+      staffId:'Senior Manager',
+      options: {
+          responsive         : true,
+          maintainAspectRatio: false,
+          legend             : {
+              display: false
+          },
+          tooltips           : {
+              mode: 'label'
+          },
+          scales             : {
+              xAxes: [
+                  {
+                      stacked           : true,
+                      display           : true,
+                      gridLines         : {
+                          display: false
+                      },
+                      labels            : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                      categoryPercentage: 1
+                  }
+              ],
+              yAxes: [
+                  {
+                      stacked  : true,
+                      type     : 'linear',
+                      display  : true,
+                      position : 'left',
+                      gridLines: {
+                          display: false
+                      },
+                      labels   : {
+                          show: true
+                      }
+                  }
+              ]
+          }
+      },
+      labels:['Working Hours','Meeting Hours'],
+       meetingHours:5,
+       workingHours:3,
        datasets: [
-           {
-               type                : 'bar',
-               label               : 'Hours',
-               data                : [50, 12, 19, 37, 30, 28, 40],
-               backgroundColor     : '#42BFF7',
-               hoverBackgroundColor: '#87cdf7'
-           },
-           {
-               type                : 'bar',
-               label               : 'Hours',
-               data                : [7, 5, 9, 7, 18, 24, 0],
-               backgroundColor     : '#c6ecfd',
-               hoverBackgroundColor: '#d7effd'
-           }
-       ]
+          {
+              type                : 'bar',
+              label               : 'Hours',
+              data                : [37, 32],
+              backgroundColor     : '#42BFF7',
+              hoverBackgroundColor: '#87cdf7'
+          },
+          {
+              type                : 'bar',
+              label               : 'Hours',
+              data                : [9, 12],
+              backgroundColor     : '#c6ecfd',
+              hoverBackgroundColor: '#d7effd'
+          }
+      ]
+  },
+},
+{
+  StaffMeeting:{
+    staffId:'Senior Manager',
+    options: {
+        responsive         : true,
+        maintainAspectRatio: false,
+        legend             : {
+            display: false
+        },
+        tooltips           : {
+            mode: 'label'
+        },
+        scales             : {
+            xAxes: [
+                {
+                    stacked           : true,
+                    display           : true,
+                    gridLines         : {
+                        display: false
+                    },
+                    labels            : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    categoryPercentage: 1
+                }
+            ],
+            yAxes: [
+                {
+                    stacked  : true,
+                    type     : 'linear',
+                    display  : true,
+                    position : 'left',
+                    gridLines: {
+                        display: false
+                    },
+                    labels   : {
+                        show: true
+                    }
+                }
+            ]
+        }
     },
-    'options': {
-       responsive         : true,
-       maintainAspectRatio: false,
-       legend             : {
-           display: false
-       },
-       tooltips           : {
-           mode: 'label'
-       },
-       scales             : {
-           xAxes: [
-               {
-                   stacked           : true,
-                   display           : true,
-                   gridLines         : {
-                       display: false
-                   },
-                   labels            : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                   categoryPercentage: 1
-               }
-           ],
-           yAxes: [
-               {
-                   stacked  : true,
-                   type     : 'linear',
-                   display  : true,
-                   position : 'left',
-                   gridLines: {
-                       display: false
-                   },
-                   labels   : {
-                       show: true
-                   }
-               }
-           ]
-       }
-    }
-    },
-    },
+    labels:['Working Hours','Meeting Hours'],
+     meetingHours:5,
+     workingHours:3,
+     datasets: [
+        {
+            type                : 'bar',
+            label               : 'Hours',
+            data                : [37, 32],
+            backgroundColor     : '#42BFF7',
+            hoverBackgroundColor: '#87cdf7'
+        },
+        {
+            type                : 'bar',
+            label               : 'Hours',
+            data                : [9, 12],
+            backgroundColor     : '#c6ecfd',
+            hoverBackgroundColor: '#d7effd'
+        }
+    ]
+},
+},
   ];
        }
 
@@ -1545,31 +1520,9 @@ selectUnit=(e,unit,index)=>{
         if(selectedUnit == 'Human Resources'){
           seniorData=[
             {
-            'title'     : 'Senior Manager1',
-            'ranges'    : {
-                'D': 'Duration',
-            },
-            'mainChart' : {
-                'D'     : {
-                    labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                    datasets: [
-                        {
-                            type                : 'bar',
-                            label               : 'Hours',
-                            data                : [9, 2, 29, 12, 27, 38, 26],
-                            backgroundColor     : '#42BFF7',
-                            hoverBackgroundColor: '#87cdf7'
-                        },
-                        {
-                            type                : 'bar',
-                            label               : 'Hours',
-                            data                : [5, 0, 13, 5, 18, 34, 20],
-                            backgroundColor     : '#c6ecfd',
-                            hoverBackgroundColor: '#d7effd'
-                        }
-                    ]
-                },
-                'options': {
+              StaffMeeting:{
+                staffId:'Senior Manager',
+                options: {
                     responsive         : true,
                     maintainAspectRatio: false,
                     legend             : {
@@ -1605,99 +1558,93 @@ selectUnit=(e,unit,index)=>{
                             }
                         ]
                     }
-                }
+                },
+                labels:['Working Hours','Meeting Hours'],
+                 meetingHours:5,
+                 workingHours:3,
+                 datasets: [
+                    {
+                        type                : 'bar',
+                        label               : 'Hours',
+                        data                : [37, 32],
+                        backgroundColor     : '#42BFF7',
+                        hoverBackgroundColor: '#87cdf7'
+                    },
+                    {
+                        type                : 'bar',
+                        label               : 'Hours',
+                        data                : [9, 12],
+                        backgroundColor     : '#c6ecfd',
+                        hoverBackgroundColor: '#d7effd'
+                    }
+                ]
             },
-      },
-            {
-      'title'     : 'Senior Manager1',
-      'ranges'    : {
-          'D': 'Duration',
-      },
-      'mainChart' : {
-          'D'     : {
-              labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-              datasets: [
-                  {
-                      type                : 'bar',
-                      label               : 'Hours',
-                      data                : [10, 5, 9, 22, 7, 8, 50],
-                      backgroundColor     : '#42BFF7',
-                      hoverBackgroundColor: '#87cdf7'
-                  },
-                  {
-                      type                : 'bar',
-                      label               : 'Hours',
-                      data                : [7, 0, 9, 7, 18, 4, 40],
-                      backgroundColor     : '#c6ecfd',
-                      hoverBackgroundColor: '#d7effd'
-                  }
-              ]
-          },
-          'options': {
-              responsive         : true,
-              maintainAspectRatio: false,
-              legend             : {
-                  display: false
-              },
-              tooltips           : {
-                  mode: 'label'
-              },
-              scales             : {
-                  xAxes: [
-                      {
-                          stacked           : true,
-                          display           : true,
-                          gridLines         : {
-                              display: false
-                          },
-                          labels            : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                          categoryPercentage: 1
-                      }
-                  ],
-                  yAxes: [
-                      {
-                          stacked  : true,
-                          type     : 'linear',
-                          display  : true,
-                          position : 'left',
-                          gridLines: {
-                              display: false
-                          },
-                          labels   : {
-                              show: true
-                          }
-                      }
-                  ]
-              }
-          }
-      },
      },
-            {
-     'title'     : 'Senior Manager1',
-     'ranges'    : {
-     'D': 'Duration',
-     },
-     'mainChart' : {
-     'D'     : {
-        labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [
+     {
+      StaffMeeting:{
+        staffId:'Senior Manager',
+        options: {
+            responsive         : true,
+            maintainAspectRatio: false,
+            legend             : {
+                display: false
+            },
+            tooltips           : {
+                mode: 'label'
+            },
+            scales             : {
+                xAxes: [
+                    {
+                        stacked           : true,
+                        display           : true,
+                        gridLines         : {
+                            display: false
+                        },
+                        labels            : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                        categoryPercentage: 1
+                    }
+                ],
+                yAxes: [
+                    {
+                        stacked  : true,
+                        type     : 'linear',
+                        display  : true,
+                        position : 'left',
+                        gridLines: {
+                            display: false
+                        },
+                        labels   : {
+                            show: true
+                        }
+                    }
+                ]
+            }
+        },
+        labels:['Working Hours','Meeting Hours'],
+         meetingHours:5,
+         workingHours:3,
+         datasets: [
             {
                 type                : 'bar',
                 label               : 'Hours',
-                data                : [10, 12, 19, 37, 30, 28, 5],
+                data                : [37, 32],
                 backgroundColor     : '#42BFF7',
                 hoverBackgroundColor: '#87cdf7'
             },
             {
                 type                : 'bar',
                 label               : 'Hours',
-                data                : [7, 5, 9, 7, 18, 24, 0],
+                data                : [9, 12],
                 backgroundColor     : '#c6ecfd',
                 hoverBackgroundColor: '#d7effd'
             }
         ]
-     },
-     'options': {
+    },
+},
+{
+  StaffMeeting:{
+    staffId:'Senior Manager',
+    options: {
         responsive         : true,
         maintainAspectRatio: false,
         legend             : {
@@ -1733,9 +1680,28 @@ selectUnit=(e,unit,index)=>{
                 }
             ]
         }
-     }
-     },
-     },
+    },
+    labels:['Working Hours','Meeting Hours'],
+     meetingHours:5,
+     workingHours:3,
+     datasets: [
+        {
+            type                : 'bar',
+            label               : 'Hours',
+            data                : [37, 32],
+            backgroundColor     : '#42BFF7',
+            hoverBackgroundColor: '#87cdf7'
+        },
+        {
+            type                : 'bar',
+            label               : 'Hours',
+            data                : [9, 12],
+            backgroundColor     : '#c6ecfd',
+            hoverBackgroundColor: '#d7effd'
+        }
+    ]
+},
+},
    ];
         }
 

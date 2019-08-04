@@ -33,12 +33,12 @@ export function getData(date,month){
 }
 
 
-export function getWeekly(date1,date2){
+export function getWeekly(month,date){
 
 
-  let fromDate = moment(date1).format('DD/MMM/YYYY')
+  let fromDate = '01/'+ month + '/' + 2019 
 
-  let toDate = moment(date2).format('DD/MMM/YYYY')
+  let toDate = date + '/' + month + '/' + 2019
 
    const request = axios.get('http://part.dynu.net:8387/v1.0/meetings/staff/sid2?fromDate='+fromDate+'&toDate='+toDate,{dataType:'json',contentTye:'application/json'});
    return (dispatch)=>request.then((response)=>

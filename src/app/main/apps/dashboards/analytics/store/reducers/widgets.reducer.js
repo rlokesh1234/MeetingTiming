@@ -31,7 +31,7 @@ const widgetsReducer = function (state = initialState, action) {
             };
 
           case "GET_DATA":
-          console.log(action.payload,'action')
+         
           return{
             ...state,
             newData:{
@@ -41,7 +41,6 @@ const widgetsReducer = function (state = initialState, action) {
           }
 
           case "GET_Weekly":
-          console.log(action.payload,'payload')
           return{
             ...state,
             newData:{
