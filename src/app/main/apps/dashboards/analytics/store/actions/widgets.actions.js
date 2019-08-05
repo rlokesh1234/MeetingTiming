@@ -29,8 +29,15 @@ export function getData(date,month){
      type:'GET_DATA',
      payload:response.data
    })
- )
+ ).catch(err =>{
+  dispatch(setError(err))
+})
 }
+
+export const setError=error=>({
+  type:'SET_ERROR',
+  error
+})
 
 
 export function getWeekly(month,date){

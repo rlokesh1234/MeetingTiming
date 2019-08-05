@@ -1082,7 +1082,7 @@ const analyticsDashboardAppDB = {
               staffId:'sid2',
               options:{
                 legend             : {
-                    display: true,
+                    display: false,
                     position: 'bottom'
                 },
                 animation:{

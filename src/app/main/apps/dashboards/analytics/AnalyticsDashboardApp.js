@@ -1905,7 +1905,7 @@ selectUnit=(e,unit,index)=>{
                             <Typography className="p-16 pb-8 text-18 font-300">
                                 General Manager
                             </Typography>
-                            <div className="">
+                            <div className="select">
                           
                         {
                           <select onChange={(event)=>this.handleSelect(event)}>{this.state.data.map((unit,index)=> <option value={unit.unit}>{unit.unit}</option>

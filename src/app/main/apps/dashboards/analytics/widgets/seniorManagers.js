@@ -142,33 +142,41 @@ class SeniorManager extends Component {
 
         return (
             <Paper className="w-full rounded-8 shadow-none border-1">
-                <div className="flex items-center justify-between px-16 py-16 border-b-1">
-                    <Typography className="text-16">{data && data.StaffMeeting && data.StaffMeeting.staffId}</Typography>
-                    {
-                        <select onChange={(event) => this.handleSelect(event)}>{this.state.duration.map((unit, index) => <option key={index} value={unit.unit}>{unit.unit}</option>
-                        )}
-                        </select>
-                    }
-
-                    {
-                        this.state.isDaily && <>
-                            <select onChange={this.handleDaily}>{this.state.daily.map((unit, index) => <option key={index} value={unit}>{unit}</option>
+                 <div className="flex px-16 py-16 border-b-1">
+                    <Typography className="text-14 w-2/5">{data && data.StaffMeeting && data.StaffMeeting.staffId}</Typography>
+                    <div className="selectMain w-3/5 flex justify-end">
+                        <div className="select durationOption">
+                        {
+                            <select onChange={(event) => this.handleSelect(event)}>{this.state.duration.map((unit, index) => <option key={index} value={unit.unit}>{unit.unit}</option>
                             )}
                             </select>
+                        }
+                        </div>
 
-                            <select onChange={this.handleMonthy}>{this.state.month.map((unit, index) => <option value={unit}>{unit}</option>
-                            )}
-                            </select>
-                        </>
+                        {
+                            this.state.isDaily && <>
+                                <div className="select dailyOption">
+                                    <select onChange={this.handleDaily}>{this.state.daily.map((unit, index) => <option key={index} value={unit}>{unit}</option>
+                                    )}
+                                    </select>
+                                </div>
+                                <div className="select monthlyOption">
+                                    <select onChange={this.handleMonthy}>{this.state.month.map((unit, index) => <option value={unit}>{unit}</option>
+                                    )}
+                                    </select>
+                                </div>
+                            </>
+                        }
 
-
-                    }
-
-                    {
-                        this.state.isMonthly && <select onChange={this.handleMonthy}>{this.state.month.map((unit, index) => <option value={unit}>{unit}</option>
-                        )}
-                        </select>
-                    }
+                        {
+                            this.state.isMonthly && 
+                                <div className="select monthlyOption">
+                                    <select onChange={this.handleMonthy}>
+                                        {this.state.month.map((unit, index) => <option value={unit}>{unit}</option>)}
+                                    </select>
+                                </div>
+                        }
+                    </div>
                 </div>
                 <div className="flex flex-row flex-wrap">
                     <div className="w-full p-8 min-h-420 h-420">
