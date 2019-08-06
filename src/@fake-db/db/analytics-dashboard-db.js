@@ -1080,22 +1080,13 @@ const analyticsDashboardAppDB = {
                 StaffMeeting:{
               type:'doughnut',
               staffId:'sid2',
-              options:{
-                legend             : {
-                    display: false,
-                    position: 'bottom'
-                },
-                animation:{
-                  animateScale:true
-                }
-              },
               labels:['Working Hours','Meeting Hours'],
               meetingHours:5,
               workingHours:3,
               datasets:[{
                 data:[5,3],
-                backgroundColor:['blue','red'],
-                hoverBackgroundColor:['blue','red']
+                backgroundColor:['blue','pink'],
+                hoverBackgroundColor:['blue','pink']
               }]
             }
           },
@@ -1103,11 +1094,13 @@ const analyticsDashboardAppDB = {
             StaffMeeting:{
               type:'doughnut',
               staffId:'General Manager2',
-              labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
+              labels:['Working Hours','Meeting Hours'],
+              meetingHours:5,
+              workingHours:8,
               datasets:[{
-                data:[50,20,50,30,15,20,80,25,5],
-                backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black'],
-                hoverBackgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
+                data:[5,8],
+                backgroundColor:['blue','orange'],
+                hoverBackgroundColor:['blue','orange']
               }]
           }
         },
@@ -1115,19 +1108,13 @@ const analyticsDashboardAppDB = {
             StaffMeeting:{
             type:'doughnut',
             staffId:'General Manager3',
-            options:{
-              legend             : {
-                  display: false
-              },
-              animation:{
-                animateScale:true
-              }
-            },
-            labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
+            meetingHours:4,
+              workingHours:7,
+            labels:['Working Hours','Meeting Hours'],
             datasets:[{
-              data:[0,20,50,30,15,20,80,25,5],
-              backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black'],
-              hoverBackgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
+              data:[4,7],
+              backgroundColor:['blue','green'],
+              hoverBackgroundColor:['blue','green']
             }]
         }
       },
@@ -1135,19 +1122,13 @@ const analyticsDashboardAppDB = {
         StaffMeeting:{
           type:'doughnut',
           staffId:'General Manager4',
-          options:{
-            legend             : {
-                display: false
-            },
-            animation:{
-              animateScale:true
-            }
-          },
-          labels:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP'],
+          labels:['Working Hours','Meeting Hours'],
+          meetingHours:2,
+              workingHours:9,
           datasets:[{
-            data:[35,20,50,30,15,20,80,25,5],
-            backgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black'],
-            hoverBackgroundColor:['blue','red','orange','green','yellow','pink','violet','white','black']
+            data:[2,9],
+            backgroundColor:['black','yellow'],
+            hoverBackgroundColor:['black','yellow']
           }]
       }
       }

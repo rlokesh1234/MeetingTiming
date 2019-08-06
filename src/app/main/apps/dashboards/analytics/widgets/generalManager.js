@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Slider from "react-slick";
+import "chartjs-plugin-datalabels";
 import { withStyles, Button, MuiThemeProvider, Typography, Paper } from '@material-ui/core';
 import { bindActionCreators } from 'redux';
 import * as Actions from '../store/actions'
@@ -12,12 +13,21 @@ import _ from '@lodash';
 import connect from 'react-redux/es/connect/connect';
 
 
-
-const styles = theme => ({
-    root: {
-        background: 'linear-gradient(to right, ' + theme.palette.primary.dark + ' 0%, ' + theme.palette.primary.main + ' 100%)',
+var options = {
+    tooltips:{
+        enabled:false,
+    },
+  plugins: {
+    datalabels: {
+        formatter:(value,ctx)=>{
+            return Math.round(value*10) + '%'
+          },
+      color: "red"
     }
-});
+  }
+};
+
+
 
 class GeneralManager extends Component {
     constructor(props) {
@@ -115,22 +125,7 @@ class GeneralManager extends Component {
                 hoverBackgroundColor: ['blue', 'red'],
                 backgroundColor: ['blue', 'red']
             }],
-            options:{
-                legend: {
-                    display: true,
-                    position: 'bottom'
-                },
-                plugins:{
-                    datalabels:{
-                      formatter:(value,ctx)=>{
-                        return Math.round(value*10) + '%'
-                      }
-                    },
-                },
-                animation: {
-                    animateScale: true
-                }
-            }
+           
         }
 
         console.log(apiData,'apiDat')
@@ -179,10 +174,10 @@ class GeneralManager extends Component {
                                 <>
                                     <Doughnut
                                         data={apiData && apiData}
-                                        options={apiData && apiData.options}
+                                        options={apiData && options}
                                     />  </> : "No records exist for Particular month" : <Doughnut
                                     data={data && data.StaffMeeting}
-                                    options={data && data.StaffMeeting.options}
+                                    options={data && options}
                                 />
                         }
 

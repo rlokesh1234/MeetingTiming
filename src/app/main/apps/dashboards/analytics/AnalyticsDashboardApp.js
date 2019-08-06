@@ -9,6 +9,7 @@ import { Doughnut } from 'react-chartjs-2';
 import {withRouter} from 'react-router-dom'
 import {bindActionCreators} from 'redux';
 import Widget1 from './widgets/Widget1';
+import App from './widgets/Checking'
 import Widget5 from './widgets/Widget5';
 import Widget6 from './widgets/Widget6';
 import Widget7 from './widgets/Widget7';
@@ -1973,8 +1974,6 @@ selectUnit=(e,unit,index)=>{
                                     </FuseAnimate>
 
                                   <Carousel  type="TeamLeader" data ={teamData && teamData}/>
-                                 
-                        
 
                            
                         </div>
