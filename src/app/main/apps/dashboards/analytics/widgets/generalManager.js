@@ -309,8 +309,8 @@ class GeneralManager extends Component {
           hoverBackgroundColor: ['khaki', 'PeachPuff']
         }
       ],
-      workingHours: newData && newData.StaffMeeting.workingHours.toFixed(0),
-      meetingHours: newData && newData.StaffMeeting.meetingHours.toFixed(0),
+      workingHours: newData && newData.StaffMeeting.workingHours.toFixed(2),
+      meetingHours: newData && newData.StaffMeeting.meetingHours.toFixed(2),
       meetingsCount: newData && newData.StaffMeeting.meetingsCount.toFixed(0)
     };
 
@@ -394,7 +394,7 @@ class GeneralManager extends Component {
                 <span className='Peachpuff px-16 text-red hoursValue'>
                   {apiData && apiData.staffId === data.StaffMeeting.staffId
                     ? apiData.meetingHours
-                    : data.StaffMeeting.meetingHours.toFixed(0)}
+                    : data.StaffMeeting.meetingHours.toFixed(2)}
                 </span>
               </div>
               <div className='text-xs w-1/2 text-right'>
@@ -402,7 +402,7 @@ class GeneralManager extends Component {
                 <span className='Khaki px-16 text-red hoursValue'>
                   {apiData && apiData.staffId === data.StaffMeeting.staffId
                     ? apiData.workingHours
-                    : data.StaffMeeting.workingHours.toFixed(0)}
+                    : data.StaffMeeting.workingHours.toFixed(2)}
                 </span>
               </div>
             </div>
