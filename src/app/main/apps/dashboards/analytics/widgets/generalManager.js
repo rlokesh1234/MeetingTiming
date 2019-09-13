@@ -302,11 +302,11 @@ class GeneralManager extends Component {
       datasets: [
         {
           data: [
-            newData && newData.StaffMeeting.workingHours.toFixed(0),
-            newData && newData.StaffMeeting.meetingHours.toFixed(0)
+            newData && newData.StaffMeeting.workingPercent.toFixed(0) / 10,
+            newData && newData.StaffMeeting.meetingPercent.toFixed(0) / 10
           ],
-          hoverBackgroundColor: ['blue', 'red'],
-          backgroundColor: ['blue', 'red']
+          backgroundColor: ['khaki', 'PeachPuff'],
+          hoverBackgroundColor: ['khaki', 'PeachPuff']
         }
       ],
       workingHours: newData && newData.StaffMeeting.workingHours.toFixed(0),
@@ -314,7 +314,6 @@ class GeneralManager extends Component {
       meetingsCount: newData && newData.StaffMeeting.meetingsCount.toFixed(0)
     };
 
-    
     return (
       <Paper className='w-full rounded-8 shadow-none border-1'>
         <div className='flex px-16 py-16 border-b-1'>
@@ -392,7 +391,7 @@ class GeneralManager extends Component {
             <div className='flex mt-12'>
               <div className='text-xs w-1/2 text-left'>
                 Working Hours:{' '}
-                <span className='bg-blue px-16 text-white hoursValue'>
+                <span className='Khaki px-16 text-red hoursValue'>
                   {apiData && apiData.staffId === data.StaffMeeting.staffId
                     ? apiData.meetingHours
                     : data.StaffMeeting.meetingHours.toFixed(0)}
@@ -400,7 +399,7 @@ class GeneralManager extends Component {
               </div>
               <div className='text-xs w-1/2 text-right'>
                 Meeting Hours:{' '}
-                <span className='bg-red px-16 text-white hoursValue'>
+                <span className='Peachpuff px-16 text-red hoursValue'>
                   {apiData && apiData.staffId === data.StaffMeeting.staffId
                     ? apiData.workingHours
                     : data.StaffMeeting.workingHours.toFixed(0)}
@@ -435,7 +434,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps({ analyticsDashboardApp }) {
-  
   return {
     newData: analyticsDashboardApp.widgets.newData
   };
