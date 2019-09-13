@@ -131,6 +131,7 @@ class GeneralManager extends Component {
   }
 
   handleSelect = event => {
+    this.setState({monthValue:'',day:''})
     if (event.target.value == 'Daily') {
       this.setState({ isDaily: true, isMonthly: false });
     } else if (event.target.value == 'Monthly') {
@@ -143,6 +144,7 @@ class GeneralManager extends Component {
   };
 
   handleDaily = event => {
+   
     if (event.target.value === 'Select') {
       event.preventDefault();
     } else {
@@ -154,6 +156,7 @@ class GeneralManager extends Component {
   };
 
   handleMonthy = event => {
+    
     if (event.target.value !== 'Select') {
       this.setState({ monthValue: event.target.value });
       if (this.state.isDaily) {
