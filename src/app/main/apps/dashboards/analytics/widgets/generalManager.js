@@ -390,16 +390,16 @@ class GeneralManager extends Component {
 
             <div className='flex mt-12'>
               <div className='text-xs w-1/2 text-left'>
-                Working Hours:{' '}
-                <span className='Khaki px-16 text-red hoursValue'>
+                Meeting Hours:{' '}
+                <span className='Peachpuff px-16 text-red hoursValue'>
                   {apiData && apiData.staffId === data.StaffMeeting.staffId
                     ? apiData.meetingHours
                     : data.StaffMeeting.meetingHours.toFixed(0)}
                 </span>
               </div>
               <div className='text-xs w-1/2 text-right'>
-                Meeting Hours:{' '}
-                <span className='Peachpuff px-16 text-red hoursValue'>
+                Working Hours:{' '}
+                <span className='Khaki px-16 text-red hoursValue'>
                   {apiData && apiData.staffId === data.StaffMeeting.staffId
                     ? apiData.workingHours
                     : data.StaffMeeting.workingHours.toFixed(0)}
