@@ -17,7 +17,7 @@
         "axios-mock-adapter": "1.16.0",
         "babel-polyfill": "7.0.0-beta.3",
         "caniuse-lite": "1.0.30000974",
-        "chart.js": "2.8.0",
+        "chart.js": "2.9.4",
         "chartjs-plugin-datalabels": "^0.6.0",
         "date-fns": "2.0.0-alpha.27",
         "downshift": "3.2.7",
